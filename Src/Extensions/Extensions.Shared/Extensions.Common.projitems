@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{fe435800-8591-4e64-9b2a-df10e5b4763f}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>26c6715c-0933-4157-bf1b-855cf0036038</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Extensions.Common</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)System.Attribute\IAttributeValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Collections.Generic\IEnumerableExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Collections.Generic\IListExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Collections.Generic\ListExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Collections.Specialized\NameValueCollectionExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Data\SqlConnectionExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Drawing.Imaging\ImageFormatExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Drawing\IconExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Drawing\ImageExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.IO\StreamExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Linq\IQueryableExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Net.Mime\MimeTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Net\HttpWebRequestExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Reflection\PropertyInfoExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Web.Mvc\ModelDictionaryExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Web\HttpRequestExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Xml\XmlDocumentExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\ByteExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\DateTimeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\DecimalExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\DoubleExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\EnumExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\GuidExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\IntegerExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\ObjectExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\StringExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\Defaults.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\TypeExtension.cs" />
+  </ItemGroup>
+</Project>

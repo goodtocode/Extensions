@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="818770a1-011c-460a-8854-0ac0ebb37397" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The Genesys Source Extensions brings full-stack, cross-platform, open-source common libraries and .NET Extensions to your products without the cost and uncertainty of building a reusable framework from scratch.
+        The goal of the Genesys Source Extensions is to get you up and running today, reading/writing to your existing database and using those entities in your Web Apps, Web Services and your Mobile Apps.
+      </para>
+    </introduction>
+    <section>
+      <title>Getting Started</title>
+      <content>
+        <para>
+          Genesys Framework is an open-source .NET Solution of foundation classes that make your objects consumable in Web, Mobile, Desktop and Services. Download as Zip, or directly in Visual Studio from Tools -> Extensions and Updates, Keyword: Genesys.
+        </para>
+        <list class="bullet">
+          <listItem>            
+            <alert class="note">
+              <para>
+                Download the Genesys Framework (Zip): <externalLink><linkText>GenesysStack.com/Genesys-Framework</linkText><linkUri>http://www.GenesysStack.com/Genesys-Framework</linkUri></externalLink>                
+              </para>
+              <para>
+                Visual Studio Marketplace (Vsix): <externalLink><linkText>marketplace.VisualStudio.com</linkText><linkUri>https://marketplace.visualstudio.com</linkUri></externalLink>
+              </para>
+              <para>
+                Quick-Guide and Requirements: 
+                  <externalLink><linkText>Quick-Guide (PDF)</linkText><linkUri>http://docs.genesyssource.com/library/Genesys-Framework/Genesys-Framework-Quick-Guide.pdf</linkUri></externalLink>
+                  -
+                  <externalLink><linkText>Requirements (PDF)</linkText><linkUri>http://docs.genesyssource.com/library/Genesys-Framework/Genesys-Framework-Requirements.pdf</linkUri></externalLink>
+              </para>
+            </alert>
+          </listItem>
+        </list>
+      </content>
+    </section>
+    <section>
+      <title>What is in the Genesys Source Extensions?</title>
+      <content>
+        <para>
+          The Genesys Source Extensions includes three .NET Solutions:
+        </para>
+        <list class="bullet">
+        <listItem><para><legacyBold>Genesys.Extensions.Core: </legacyBold> Portable Class Library (Windows, Xamarin iOS, Xamarin Android), .NET 4.6, Profile 151</para></listItem>
+        <listItem><para><legacyBold>Genesys.Extensions.Standard: </legacyBold> Class Library .NET 4.6</para></listItem>
+        <listItem><para><legacyBold>Genesys.Extras.Core: </legacyBold> Portable Class Library (Windows, Xamarin iOS, Xamarin Android), .NET 4.6, Profile 151</para></listItem>
+        <listItem><para><legacyBold>Genesys.Extras.Standard: </legacyBold> Class Library .NET 4.6</para></listItem>
+        </list>
+      </content>
+    </section>
+    <relatedTopics>
+      <link xlink:href="6f95f9a8-e6e0-4d3f-9651-500a8d277f30" />
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>
+
+
+

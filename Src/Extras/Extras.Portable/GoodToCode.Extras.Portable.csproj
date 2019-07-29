@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39DE41A4-A783-4FD2-B9D6-4214F2E0B87D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Genesys.Extras</RootNamespace>
+    <AssemblyName>Genesys.Extras.Portable</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Genesys.Extras.Portable.xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Genesys.Extras.Portable.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="GoodToCodeFramework.snk" />
+    <None Include="App_Data\PostBuild.Debug.bat" />
+    <None Include="App_Data\PostBuild.Release.bat" />
+    <None Include="App_Data\PreBuild.Debug.bat" />
+    <None Include="App_Data\PreBuild.Release.bat" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Extras.Shared\Collections\IKeyValuePair.cs">
+      <Link>Collections\IKeyValuePair.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\IListSafe.cs">
+      <Link>Collections\IListSafe.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\KeyValueList.cs">
+      <Link>Collections\KeyValueList.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\KeyValueListString.cs">
+      <Link>Collections\KeyValueListString.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\KeyValuePairSafe.cs">
+      <Link>Collections\KeyValuePairSafe.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\KeyValuePairSafeComparer.cs">
+      <Link>Collections\KeyValuePairSafeComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\KeyValuePairString.cs">
+      <Link>Collections\KeyValuePairString.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Collections\ListSafe.cs">
+      <Link>Collections\ListSafe.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Configuration\AppSettingList.cs">
+      <Link>Configuration\AppSettingList.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Configuration\AppSettingSafe.cs">
+      <Link>Configuration\AppSettingSafe.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Configuration\ConfigurationManagerSafe.cs">
+      <Link>Configuration\ConfigurationManagerSafe.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Configuration\ConnectionStringList.cs">
+      <Link>Configuration\ConnectionStringList.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Configuration\ConnectionStringSafe.cs">
+      <Link>Configuration\ConnectionStringSafe.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Configuration\IConfigurationManager.cs">
+      <Link>Configuration\IConfigurationManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\ColumnPrefix.cs">
+      <Link>Data\ColumnPrefix.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\ConnectionStringName.cs">
+      <Link>Data\ConnectionStringName.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\DataAccessBehavior.cs">
+      <Link>Data\DataAccessBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\DatabaseSchemaName.cs">
+      <Link>Data\DatabaseSchemaName.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\DataConcurrency.cs">
+      <Link>Data\DataConcurrency.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\RecordIdentity.cs">
+      <Link>Data\RecordIdentity.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\TableName.cs">
+      <Link>Data\TableName.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Data\TakeRows.cs">
+      <Link>Data\TakeRows.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Mathematics.Geometry\AspectRatio.cs">
+      <Link>Mathematics.Geometry\AspectRatio.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Mathematics.Geometry\Square.cs">
+      <Link>Mathematics.Geometry\Square.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Mathematics\AgeCalculator.cs">
+      <Link>Mathematics\AgeCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Mathematics\Arithmetic.cs">
+      <Link>Mathematics\Arithmetic.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Media\RGBByteInfo.cs">
+      <Link>Media\RGBByteInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Media\RGBStandardInfo.cs">
+      <Link>Media\RGBStandardInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpClientBuilder.cs">
+      <Link>Net.HttpRequest\HttpClientBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestClient.cs">
+      <Link>Net.HttpRequest\HttpRequestClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestDelete.cs">
+      <Link>Net.HttpRequest\HttpRequestDelete.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestGet.cs">
+      <Link>Net.HttpRequest\HttpRequestGet.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestGetString.cs">
+      <Link>Net.HttpRequest\HttpRequestGetString.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestPost.cs">
+      <Link>Net.HttpRequest\HttpRequestPost.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestPostString.cs">
+      <Link>Net.HttpRequest\HttpRequestPostString.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestPut.cs">
+      <Link>Net.HttpRequest\HttpRequestPut.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpRequestPutString.cs">
+      <Link>Net.HttpRequest\HttpRequestPutString.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.HttpRequest\HttpVerbSender.cs">
+      <Link>Net.HttpRequest\HttpVerbSender.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.Mime\ContentType.cs">
+      <Link>Net.Mime\ContentType.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.Mime\ContentTypes.cs">
+      <Link>Net.Mime\ContentTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.Url\UrlBuilder.cs">
+      <Link>Net.Url\UrlBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Net.Url\UrlInfo.cs">
+      <Link>Net.Url\UrlInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Security.Cryptography\CaesarEncryptor.cs">
+      <Link>Security.Cryptography\CaesarEncryptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Security.Cryptography\IEncryptor.cs">
+      <Link>Security.Cryptography\IEncryptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Serialization\ISerializable.cs">
+      <Link>Serialization\ISerializable.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Serialization\ISerializer.cs">
+      <Link>Serialization\ISerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Serialization\JsonSerializer.cs">
+      <Link>Serialization\JsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Serialization\Serializer.cs">
+      <Link>Serialization\Serializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\Cleanser.cs">
+      <Link>Text.Cleansing\Cleanser.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\CleanserAttribute.cs">
+      <Link>Text.Cleansing\CleanserAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\CleanserFactory.cs">
+      <Link>Text.Cleansing\CleanserFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\DefaultCleanser.cs">
+      <Link>Text.Cleansing\DefaultCleanser.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\HtmlUnsafeCleanser.cs">
+      <Link>Text.Cleansing\HtmlUnsafeCleanser.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\SqlInjectionCleanser.cs">
+      <Link>Text.Cleansing\SqlInjectionCleanser.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Cleansing\XmlInvalidCharacterCleanser.cs">
+      <Link>Text.Cleansing\XmlInvalidCharacterCleanser.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Encoding\Base64Encoder.cs">
+      <Link>Text.Encoding\Base64Encoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Encoding\IEncoder.cs">
+      <Link>Text.Encoding\IEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text.Encoding\UrlEncoder.cs">
+      <Link>Text.Encoding\UrlEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text\DateRelative.cs">
+      <Link>Text\DateRelative.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text\StringMutable.cs">
+      <Link>Text\StringMutable.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text\StringRandom.cs">
+      <Link>Text\StringRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\Extras.Shared\Text\TemplateBuilder.cs">
+      <Link>Text\TemplateBuilder.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Extensions\Extensions.Portable\GoodToCode.Extensions.Portable.csproj">
+      <Project>{c21fbc0a-299c-4297-a50e-cb3be059aee9}</Project>
+      <Name>GoodToCode.Extensions.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Call "$(MSBuildProjectDirectory)\App_Data\PostBuild.$(Configuration).bat" "$(MSBuildProjectDirectory)\$(OutDir)" "$(Configuration)" "$(ProjectName)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>Call "$(MSBuildProjectDirectory)\App_Data\PreBuild.$(Configuration).bat" "$(MSBuildProjectDirectory)" "$(Configuration)" "$(ProjectName)"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

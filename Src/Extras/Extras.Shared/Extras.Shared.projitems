@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{ab83fcda-5382-403e-9887-b381f9a48964}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>2f8c8d5e-1e79-4656-b939-9b103c7fb7cf</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Extras.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\IKeyValuePair.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\IListSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\KeyValueList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\KeyValueListString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\KeyValuePairSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\KeyValuePairSafeComparer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\KeyValuePairString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\ListSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\AppSettingList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\AppSettingSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\ConfigurationManager.Full.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\ConfigurationManagerSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\ConnectionStringList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\ConnectionStringSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configuration\IConfigurationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ConnectionStringName.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\RecordIdentity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataAccessBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ColumnPrefix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataReaderSafe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\TableName.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DatabaseSchemaName.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataConcurrency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\TakeRows.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\FileReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\FileSearcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mathematics.Geometry\AspectRatio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mathematics.Geometry\Square.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mathematics\AgeCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mathematics\Arithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Media\RGBByteInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Media\RGBStandardInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpClientBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestDelete.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestGet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestGetString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestPost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestPostString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestPut.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpRequestPutString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.HttpRequest\HttpVerbSender.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.Mime\ContentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.Mime\ContentTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.Url\UrlBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net.Url\UrlInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\EmailBuilderFull.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security.Cryptography\CaesarEncryptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security.Cryptography\DesEncryptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security.Cryptography\IEncryptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security.Cryptography\Md5HashBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\ISerializable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\ISerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\JsonSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\PhpSerializerGeneric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Serializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\XmlSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\Cleanser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\CleanserAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\CleanserFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\DefaultCleanser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\HtmlUnsafeCleanser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\SqlInjectionCleanser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Cleansing\XmlInvalidCharacterCleanser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Encoding\Base64Encoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Encoding\IEncoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text.Encoding\UrlEncoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text\DateRelative.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text\StringMutable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text\StringRandom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text\TemplateBuilder.cs" />
+  </ItemGroup>
+</Project>
