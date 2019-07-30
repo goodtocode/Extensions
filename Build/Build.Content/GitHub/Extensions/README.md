@@ -4,12 +4,12 @@
 <tr>
 <td>
 
-<img alt="Your Genesys Source Framework" src="https://www.genesyssource.com/images/welcome/Genesys-Source-Logo-71x71-Transparent.png">
+<img alt="Your GoodToCode Source Framework" src="https://www.goodtocode.com/images/welcome/GoodToCode-Source-Logo-71x71-Transparent.png">
 
 </td>
 <td>
 
-<h2> Genesys Source .NET Extensions </h2>
+<h2> GoodToCode Source .NET Extensions </h2>
 
 <h4>One Framework - Your Data - Any Platform</h4>
 
@@ -20,7 +20,7 @@
 
 ### Features & Benefits
 
-Genesys Source .NET Extension is a cross-platform common-library of .NET Core extension methods and extra classes. Built to support the Genesys Source Framework...an open-source, cross-platform, full-stack .NET solution that centralizes your business objects in one reusable solution.
+GoodToCode Source .NET Extension is a cross-platform common-library of .NET Core extension methods and extra classes. Built to support the GoodToCode Source Framework...an open-source, cross-platform, full-stack .NET solution that centralizes your business objects in one reusable solution.
 
 </td>
 </tr>
@@ -32,21 +32,21 @@ Genesys Source .NET Extension is a cross-platform common-library of .NET Core ex
 
 <td style="vertical-align: top; border-left-color: rgb(213, 213, 213); border-left-width: 1px; border-left-style: solid;">
 
-### Projects included in the Genesys Source Framework
+### Projects included in the GoodToCode Source Framework
 
 <div>
 
-<strong>Genesys.Extensions.Core</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET Extensions specific to .NET Core, such as Web or Data Access extensions. Most functionality is in Extensions.Standard.</span>
+<strong>GoodToCode.Extensions.Core</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET Extensions specific to .NET Core, such as Web or Data Access extensions. Most functionality is in Extensions.Standard.</span>
 
-<strong>Genesys.Extensions.Standard</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET Extensions specific to all of .NET (including .NET Core). Application/Data Access extensions are in Extensions.Core.</span>
+<strong>GoodToCode.Extensions.Standard</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET Extensions specific to all of .NET (including .NET Core). Application/Data Access extensions are in Extensions.Core.</span>
 
-<strong>Genesys.Extensions.Shared</strong> - <span style="text-align:justify; line-height:18px">C# Shared Project that shares .cs files with .Core vs. .Full projects. Allows same C# classes to be used in .NET Core and .NET Framework simultaneously, without multi-targetting.</span>
+<strong>GoodToCode.Extensions.Shared</strong> - <span style="text-align:justify; line-height:18px">C# Shared Project that shares .cs files with .Core vs. .Full projects. Allows same C# classes to be used in .NET Core and .NET Framework simultaneously, without multi-targetting.</span>
 
-<strong>Genesys.Extras.Core</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET "Extras" specific to .NET Core, such as Web or Data Access extensions. Most functionality is in Extensions.Standard.</span>
+<strong>GoodToCode.Extras.Core</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET "Extras" specific to .NET Core, such as Web or Data Access extensions. Most functionality is in Extensions.Standard.</span>
 
-<strong>Genesys.Extras.Standard</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET "Extras" specific to all of .NET (including .NET Core). Application/Data Access extensions are in Extensions.Core.</span>
+<strong>GoodToCode.Extras.Standard</strong> - <span style="text-align:justify; line-height:18px">Cross-platform library of .NET "Extras" specific to all of .NET (including .NET Core). Application/Data Access extensions are in Extensions.Core.</span>
 
-<strong>Genesys.Extras.Shared</strong> - <span style="text-align:justify; line-height:18px">C# Shared Project that shares .cs files with .Core vs. .Full projects. Allows same C# classes to be used in .NET Core and .NET Framework simultaneously, without multi-targetting.</span>
+<strong>GoodToCode.Extras.Shared</strong> - <span style="text-align:justify; line-height:18px">C# Shared Project that shares .cs files with .Core vs. .Full projects. Allows same C# classes to be used in .NET Core and .NET Framework simultaneously, without multi-targetting.</span>
 
 </div>
 <br />
@@ -56,24 +56,24 @@ Genesys Source .NET Extension is a cross-platform common-library of .NET Core ex
 <div>
     <table>
         <tr>
-            <td><a href="https://docs.genesyssource.com/products/genesys-framework/genesys-framework-ebook.pdf" target="_blank">[PDF]</a></td>
-            <td><a href="https://docs.genesyssource.com/products/genesys-framework/genesys-framework-ebook.pdf" target="_blank">Genesys Framework eBook</a></td>
+            <td><a href="https://docs.goodtocode.com/products/GoodToCode-framework/GoodToCode-framework-ebook.pdf" target="_blank">[PDF]</a></td>
+            <td><a href="https://docs.goodtocode.com/products/GoodToCode-framework/GoodToCode-framework-ebook.pdf" target="_blank">GoodToCode Framework eBook</a></td>
         </tr>
         <tr>
-            <td><a href="https://docs.genesyssource.com/reference/genesys-framework" target="_blank">[API]</a></td>
-            <td><a href="https://docs.genesyssource.com/reference/genesys-framework" target="_blank">Genesys Framework Reference</a></td>
+            <td><a href="https://docs.goodtocode.com/reference/GoodToCode-framework" target="_blank">[API]</a></td>
+            <td><a href="https://docs.goodtocode.com/reference/GoodToCode-framework" target="_blank">GoodToCode Framework Reference</a></td>
         </tr>
         <tr>
-            <td><a href="https://docs.genesyssource.com" target="_blank">[Docs]</a></td>
-            <td><a href="https://docs.genesyssource.com" target="_blank">docs.genesyssource.com</a></td>
+            <td><a href="https://docs.goodtocode.com" target="_blank">[Docs]</a></td>
+            <td><a href="https://docs.goodtocode.com" target="_blank">docs.goodtocode.com</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/GenesysSource/Framework/issues/new" target="_blank">[+/-]</a></td>
-            <td><a href="https://github.com/GenesysSource/Framework/issues/new" target="_blank">Report an Issue</a></td>
+            <td><a href="https://github.com/GoodToCode/Framework/issues/new" target="_blank">[+/-]</a></td>
+            <td><a href="https://github.com/GoodToCode/Framework/issues/new" target="_blank">Report an Issue</a></td>
         </tr>
         <tr>
-            <td><a href="https://cloud.genesyssource.com/genesys-framework" target="_blank">[Zip]</a></td>
-            <td><a href="https://cloud.genesyssource.com/genesys-framework" target="_blank">Download Genesys Framework</a></td>
+            <td><a href="https://cloud.goodtocode.com/GoodToCode-framework" target="_blank">[Zip]</a></td>
+            <td><a href="https://cloud.goodtocode.com/GoodToCode-framework" target="_blank">Download GoodToCode Framework</a></td>
         </tr>
         <tr>
             <td><a href="https://www.microsoft.com/net/download" target="_blank">[Azure]</a></td>
@@ -118,8 +118,8 @@ Genesys Source .NET Extension is a cross-platform common-library of .NET Core ex
 
 **What's the difference between Extensions and Extras**
 
-1.  Genesys.Extensions contains .NET extension methods only. No "new" classes exists.
-2.  Genesys.Extras contains .NET-level classes, that look and feel like .NET but aren't from Microsoft.
+1.  GoodToCode.Extensions contains .NET extension methods only. No "new" classes exists.
+2.  GoodToCode.Extras contains .NET-level classes, that look and feel like .NET but aren't from Microsoft.
 
 **Why the Shared projects?**
 
@@ -153,7 +153,7 @@ Genesys Source .NET Extension is a cross-platform common-library of .NET Core ex
 <div style="padding: 15px 40px 15px 15px; text-align: center; vertical-align: top;">
 
 <div style="text-align:center;font-size: 1.6em; font-weight: bold;">
-<strong>GENESYSSOURCE</strong>
+<strong>GoodToCode</strong>
 
 22431 Antonio, Suite B160-843
 <br />
@@ -162,7 +162,7 @@ Rancho Santa Margarita, CA 92688
 +1 949.544.1900
 <br />
 
-[genesyssource.com](http://www.genesyssource.com) | [@genesyssource](http://www.twitter.com/genesyssource)
+[goodtocode.com](http://www.goodtocode.com) | [@GoodToCode](http://www.twitter.com/GoodToCode)
 
 
 </div>

@@ -1,9 +1,9 @@
 ECHO OFF
-REM Usage: Call SNKCreate.bat GenesysFramework.snk
-ECHO Starting SNKCreate.bat GenesysFramework.snk
+REM Usage: Call SNKCreate.bat GoodToCodeFramework.snk
+ECHO Starting SNKCreate.bat GoodToCodeFramework.snk
 
 %WINDIR%\system32\attrib.exe *.* -r /s
 
-..\Utility\SNK\sn.exe –k GenesysFramework.snk
+..\Utility\SNK\sn.exe –k GoodToCodeFramework.snk
 
 exit 0

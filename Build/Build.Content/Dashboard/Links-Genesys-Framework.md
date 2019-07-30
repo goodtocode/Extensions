@@ -1,19 +1,19 @@
-##### Genesys Source Framework [Dashboard](https://genesyssource.visualstudio.com/Framework/_dashboards)
+##### GoodToCode Source Framework [Dashboard](https://GoodToCode.visualstudio.com/Framework/_dashboards)
 ** What is it **
-- [GenesysFramework.com](http://www.GenesysFramework.com)
-- [Quick-Guide](http://docs.genesyssource.com/reference/Genesys-Framework/Genesys-Framework-Quick-Guide.pdf)
-- [Requirements](http://docs.genesyssource.com/products/Genesys-Framework/What-is-the-Genesys-Source-Framework.pdf)
+- [GoodToCode.com](http://www.GoodToCode.com)
+- [Quick-Guide](http://docs.goodtocode.com/reference/GoodToCode-Framework/GoodToCode-Framework-Quick-Guide.pdf)
+- [Requirements](http://docs.goodtocode.com/products/GoodToCode-Framework/What-is-the-GoodToCode-Source-Framework.pdf)
 
 ** Try It **
-- [Sampler.GenesysSource.com](http://sampler.genesyssource.com)
+- [Sampler.goodtocode.com](http://sampler.goodtocode.com)
 
 ** Get It **
-- [GenesysStack.com (Zip)](http://www.GenesysStack.com)
-- [VisualStudioMarketplace.com (Vsix)](https://marketplace.visualstudio.com/search?term=Genesys&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance)
-- [GitHub.com (Source)](https://www.github.com/genesyssource)
-- [NuGet.org (DLLs)](http://www.nuget.org/packages?q=genesys)
+- [GoodToCode.com (Zip)](http://www.GoodToCode.com)
+- [VisualStudioMarketplace.com (Vsix)](https://marketplace.visualstudio.com/search?term=GoodToCode&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance)
+- [GitHub.com (Source)](https://www.github.com/GoodToCode)
+- [NuGet.org (DLLs)](http://www.nuget.org/packages?q=GoodToCode)
 
 ** Build It **
-- [Code](http://code.genesyssource.com/reference/Genesys-Framework)
-- [Docs](http://docs.genesyssource.com/reference/Genesys-Framework)
+- [Code](http://code.goodtocode.com/reference/GoodToCode-Framework)
+- [Docs](http://docs.goodtocode.com/reference/GoodToCode-Framework)
 

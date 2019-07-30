@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------
-# <copyright file="Genesys.Code.psm1" company="Genesys Source">
-#      Copyright (c) Genesys Source. All rights reserved.
+# <copyright file="GoodToCode.Code.psm1" company="GoodToCode Source">
+#      Copyright (c) GoodToCode Source. All rights reserved.
 #      All rights are reserved. Reproduction or transmission in whole or in part, in
 #      any form or by any means, electronic, mechanical or otherwise, is prohibited
 #      without the prior written consent of the copyright owner.
@@ -24,7 +24,7 @@ function Add-CopyrightApache
 		)
 	$Path = Set-Unc -Path $Path
 	# *** Change Destination code Headers
-	[String]$OldLicense1 = '//      Copyright (c) Genesys Source. All rights reserved.'
+	[String]$OldLicense1 = '//      Copyright (c) GoodToCode Source. All rights reserved.'
 	[String]$OldLicense2 = '//      All rights are reserved. Reproduction or transmission in whole or in part, in'
 	[String]$OldLicense3 = '//      any form or by any means, electronic, mechanical or otherwise, is prohibited'
 	[String]$OldLicense4 = '//      without the prior written consent of the copyright owner.'
@@ -78,7 +78,7 @@ function Add-NuGet
  		[string]$Path = $(throw '-Path is a required parameter.'),
 		[string]$NuSpec = $(throw '-NuSpec is a required parameter.'),
 		[string]$Key = '2FA2DC63-0510-46A7-BFBF-0AA72F1EB453',
-		[string]$Url = '\\Dev-Web-01.dev.genesyssource.com\Sites\nuget.genesyssource.com\Packages'
+		[string]$Url = '\\Dev-Web-01.dev.goodtocode.com\Sites\nuget.goodtocode.com\Packages'
 	)
 	Write-Host "Add-NuGet -Path $Path -NuSpec $NuSpec"
 	[String]$NuGetExe = '..\..\..\Build\Build.Content\Utility\NuGet\NuGet.exe'
@@ -264,7 +264,7 @@ export-modulemember -function Set-Version
 #-----------------------------------------------------------------------
 # Copy-FrameworkRepo [-String [<String>]]
 #
-# Example: .\Copy-FrameworkRepo -Path "\\Dev-Vm-01.dev.genesyssource.com\Vault\GitHub\Extensions" -Repo "Extensions"
+# Example: .\Copy-FrameworkRepo -Path "\\Dev-Vm-01.dev.goodtocode.com\Vault\GitHub\Extensions" -Repo "Extensions"
 #	Result: false
 #-----------------------------------------------------------------------
 function Copy-FrameworkRepo
@@ -305,7 +305,7 @@ export-modulemember -function Copy-FrameworkRepo
 #-----------------------------------------------------------------------
 # Copy-FrameworkTemplate [-String [<String>]]
 #
-# Example: .\Copy-FrameworkTemplate -Path "\\Dev-Vm-01.dev.genesyssource.com\Vault\GitHub\Extensions" -Repo "Extensions"
+# Example: .\Copy-FrameworkTemplate -Path "\\Dev-Vm-01.dev.goodtocode.com\Vault\GitHub\Extensions" -Repo "Extensions"
 #	Result: false
 #-----------------------------------------------------------------------
 function Copy-FrameworkTemplate
@@ -494,13 +494,13 @@ export-modulemember -function  Find-MsBuild
 function Copy-SourceCode
 {
 param(
-	[String]$Path = '\\Dev-Vm-01.dev.genesyssource.com\Vault\builds\sprints',
-	[String]$RepoName = 'Genesys-Extensions',
+	[String]$Path = '\\Dev-Vm-01.dev.goodtocode.com\Vault\builds\sprints',
+	[String]$RepoName = 'GoodToCode-Extensions',
 	[String]$ProductName = 'Extensions',
 	[String]$Lib='',
 	[String]$Relative = '..\..\..\',
 	[String]$SolutionFolder = '',
-	[String]$Snk='GenesysFramework.snk'
+	[String]$Snk='GoodToCodeFramework.snk'
 )
 	Write-Host "Copy-SourceCode -Path $Path -RepoName $RepoName -ProductName $ProductName -Snk $Snk -Relative $Relative -Clean $Clean"
 	# Cleanse Variables
@@ -546,7 +546,7 @@ function Remove-StrongNameKey
 	
 	# Remove SNK originator reference
 	#  <PropertyGroup>
-	#		<AssemblyOriginatorKeyFile>GenesysFramework.snk</AssemblyOriginatorKeyFile>
+	#		<AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
 	#  </PropertyGroup>	
 	Remove-ContentsByTagContains -Path $Path -Include *.csproj -Open "<PropertyGroup>" -Close "</PropertyGroup>" -Contains $File
 	
@@ -567,8 +567,8 @@ export-modulemember -function Remove-StrongNameKey
 #-----------------------------------------------------------------------
 # Remove-Subdomain [-Domain [<String>]]
 #
-# Example: .\Remove-Subdomain -Domain www.GenesysSource.com
-#	Result: GenesysSource.com
+# Example: .\Remove-Subdomain -Domain www.goodtocode.com
+#	Result: goodtocode.com
 #-----------------------------------------------------------------------
 function Remove-Subdomain
 {
@@ -621,7 +621,7 @@ export-modulemember -function Remove-TFSBinding
 #-----------------------------------------------------------------------
 # Update-AppSetting [-Path [<String>]]
 #
-# Example: .\Update-AppSetting -Path \\source\path -Key "MyWebService" -Value "http://sampler.genesyssource.com/genesys-framework-for-webapi/v1"
+# Example: .\Update-AppSetting -Path \\source\path -Key "MyWebService" -Value "http://sampler.goodtocode.com/GoodToCode-framework-for-webapi/v1"
 #-----------------------------------------------------------------------
 function Update-AppSetting
 {
@@ -645,9 +645,9 @@ export-modulemember -function Update-AppSetting
 # Update-ConnectionString [-Path [<String>]]
 #
 # Example:
-#	SQL Express .mdf file: .\Update-ConnectionString -Path \\source\path -Key "DefaultConnection" -Value "Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\App_Data\FrameworkData.mdf;Integrated Security=True;Application Name=GenesysFramework;" -Provider "System.Data.SqlClient"
-#	SQL Server ADO.NET: .\Update-ConnectionString -Path $BuildFull -Key "DefaultConnection" -Value "data source=DatabaseServer.dev.genesyssource.com;initial catalog=FrameworkData;integrated security=True;application name=GenesysFramework;" -Provider "System.Data.SqlClient"
-#	SQL SErver EF: <add name="TestADOConnection" connectionString="Data Source=DatabaseServer.dev.genesyssource.com;Initial Catalog=FrameworkData;Connect Timeout=180;Application Name=GenesysFramework;" -Provider "System.Data.EntityClient"
+#	SQL Express .mdf file: .\Update-ConnectionString -Path \\source\path -Key "DefaultConnection" -Value "Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\App_Data\FrameworkData.mdf;Integrated Security=True;Application Name=GoodToCodeFramework;" -Provider "System.Data.SqlClient"
+#	SQL Server ADO.NET: .\Update-ConnectionString -Path $BuildFull -Key "DefaultConnection" -Value "data source=DatabaseServer.dev.goodtocode.com;initial catalog=FrameworkData;integrated security=True;application name=GoodToCodeFramework;" -Provider "System.Data.SqlClient"
+#	SQL SErver EF: <add name="TestADOConnection" connectionString="Data Source=DatabaseServer.dev.goodtocode.com;Initial Catalog=FrameworkData;Connect Timeout=180;Application Name=GoodToCodeFramework;" -Provider "System.Data.EntityClient"
 #-----------------------------------------------------------------------
 function Update-ConnectionString
 {
@@ -680,7 +680,7 @@ function Get-TFSLatest
 	param( 
 		[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
 		[string]$Path = $(throw '-Path is a required parameter.'),
-		[string]$Server = "http://genesyssource.visualstudio.com",
+		[string]$Server = "http://GoodToCode.visualstudio.com",
 		[string]$Include = "*.*",
  		[string]$Exclude = ""
 	)
@@ -717,14 +717,14 @@ function Restore-Brochure
 		[string]$RepoName = $(throw '-RepoName is a required parameter.'),
 		[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
 		[string]$BrochureName = $(throw '-BrochureName is a required parameter.'),
- 		[string]$Path = '\\dev-ro-xviii.dev.genesyssource.com\c$\Users\rjgood\Genesys Source\Genesys - Docs',		
-		[String]$Destination = '\\Dev-Web-01.dev.genesyssource.com\Sites',
+ 		[string]$Path = '\\dev-ro-xviii.dev.goodtocode.com\c$\Users\rjgood\GoodToCode Source\GoodToCode - Docs',		
+		[String]$Destination = '\\Dev-Web-01.dev.goodtocode.com\Sites',
 		[string]$AdditionalFile = ''
 	)
 	Write-Host "Restore-Brochure -RepoName $RepoName -BrochureName $BrochureName"
 	$Path = Set-Unc -Path $Path
 	$Source=[String]::Format("{0}\Brochures\{1}", $Path, $RepoName)
-	$Destination=[String]::Format("{0}\docs.GenesysSource.com\Brochures\{1}", $Destination, $RepoName)
+	$Destination=[String]::Format("{0}\docs.goodtocode.com\Brochures\{1}", $Destination, $RepoName)
 	Write-Verbose "Path: $Path, RepoName: $RepoName, Source: $Source, Destination: $Destination"
 	# Brochure
 	$DocPath = [String]::Format("{0}\{1}\{1}.pdf", $Source, $BrochureName)
@@ -749,14 +749,14 @@ function Restore-ProductDoc
 		[string]$RepoName = $(throw '-RepoName is a required parameter.'),
 		[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
 		[string]$DocName = $(throw '-BrochureName is a required parameter.'),
- 		[string]$Path = '\\dev-ro-xviii.dev.genesyssource.com\c$\Users\rjgood\Genesys Source\Genesys - Docs',		
-		[String]$Destination = '\\Dev-Web-01.dev.genesyssource.com\Sites',
+ 		[string]$Path = '\\dev-ro-xviii.dev.goodtocode.com\c$\Users\rjgood\GoodToCode Source\GoodToCode - Docs',		
+		[String]$Destination = '\\Dev-Web-01.dev.goodtocode.com\Sites',
 		[string]$AdditionalFile = ''
 	)
 	Write-Host "Restore-ProductDoc -RepoName $RepoName -BrochureName $DocName"
 	$Path = Set-Unc -Path $Path
 	$Source=[String]::Format("{0}\Products\{1}", $Path, $RepoName)
-	$Destination=[String]::Format("{0}\docs.GenesysSource.com\Products\{1}", $Destination, $RepoName)
+	$Destination=[String]::Format("{0}\docs.goodtocode.com\Products\{1}", $Destination, $RepoName)
 	Write-Verbose "Path: $Path, RepoName: $RepoName, Source: $Source, Destination: $Destination"
 	# Brochure
 	$DocPath = [String]::Format("{0}\{1}\{1}.pdf", $Source, $DocName)
@@ -794,20 +794,20 @@ export-modulemember -function Restore-NuGet
 #-----------------------------------------------------------------------
 # Restore-VMDocsVMDocs [-RepoName [<String>]]
 #
-# Example: Restore-VMDocs -RepoName 'Genesys-Cloud-Dev-Environment'
+# Example: Restore-VMDocs -RepoName 'GoodToCode-Cloud-Dev-Environment'
 #-----------------------------------------------------------------------
 function Restore-VMDocs
 {
 	param (
 		[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
 		[string]$RepoName = $(throw '-Path is a required parameter.'),
- 		[string]$Path = '\\dev-ro-xviii.dev.genesyssource.com\c$\Users\rjgood\Genesys Source\Genesys - Docs',
-		[String]$Build = '\\Dev-Vm-01.dev.genesyssource.com\Vault\Builds\Sprints',
-		[string]$Folder = 'docs.GenesysSource.com'
+ 		[string]$Path = '\\dev-ro-xviii.dev.goodtocode.com\c$\Users\rjgood\GoodToCode Source\GoodToCode - Docs',
+		[String]$Build = '\\Dev-Vm-01.dev.goodtocode.com\Vault\Builds\Sprints',
+		[string]$Folder = 'docs.goodtocode.com'
 	)
 	Write-Host "Restore-VMDocs -RepoName $RepoName -Path $Path -Build $Build -AdditionalFile $AdditionalFile"
 	$Path = Set-Unc -Path $Path
-	$Build = [String]::Format("{0}\{1}\docs.genesyssource.com\{2}", $Build, (Get-Date).ToString("yyyy.MM"), $RepoName)	
+	$Build = [String]::Format("{0}\{1}\docs.goodtocode.com\{2}", $Build, (Get-Date).ToString("yyyy.MM"), $RepoName)	
 	$Path=[String]::Format("{0}\Products\{1}", $Path, $RepoName)
 	Write-Verbose "After Transformation - Path: $Path, Build: $Build"
 
@@ -878,7 +878,7 @@ export-modulemember -function Restore-Solution
 #-----------------------------------------------------------------------
 # Restore-VsixTemplate [-String [<String>]]
 #
-# Example: .\Restore-VsixTemplate -Path "\\Dev-Vm-01.dev.genesyssource.com\Vault\GitHub\Extensions" -Repo "Extensions"
+# Example: .\Restore-VsixTemplate -Path "\\Dev-Vm-01.dev.goodtocode.com\Vault\GitHub\Extensions" -Repo "Extensions"
 #	Result: false
 #-----------------------------------------------------------------------
 function Restore-VsixTemplate
@@ -892,8 +892,8 @@ function Restore-VsixTemplate
 		[String]$Build = $(throw '-Build is a required parameter.'),
 		[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
 		[String]$ProductFlavor = $(throw '-ProductFlavor is a required parameter.'),
-		[String]$Database = 'DatabaseServer.dev.genesyssource.com',
-		[String]$RepoName="Genesys-Framework",
+		[String]$Database = 'DatabaseServer.dev.goodtocode.com',
+		[String]$RepoName="GoodToCode-Framework",
 		[String]$FamilyName="Framework",
 		[String]$SolutionFolder="Quick-Start"
 	)

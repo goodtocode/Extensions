@@ -39,7 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -130,65 +130,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\app_offline.htm" />
-    <Content Include="Dashboard\Links-Genesys-Source.md" />
     <Content Include="GitHub\Extensions\.gitattributes" />
     <Content Include="GitHub\Extensions\.gitignore" />
     <Content Include="GitHub\Extensions\coding-style.md" />
     <Content Include="GitHub\Extensions\contributing.md" />
     <Content Include="GitHub\Extensions\LICENSE" />
     <Content Include="GitHub\Extensions\README.md" />
-    <Content Include="GitHub\Framework-for-MVC\.gitattributes" />
-    <Content Include="GitHub\Framework-for-MVC\.gitignore" />
-    <Content Include="GitHub\Framework-for-MVC\coding-style.md" />
-    <Content Include="GitHub\Framework-for-MVC\contributing.md" />
-    <Content Include="GitHub\Framework-for-MVC\LICENSE" />
-    <Content Include="GitHub\Framework-for-MVC\README.md" />
-    <Content Include="GitHub\Framework-for-Universal\.gitattributes" />
-    <Content Include="GitHub\Framework-for-Universal\.gitignore" />
-    <Content Include="GitHub\Framework-for-Universal\coding-style.md" />
-    <Content Include="GitHub\Framework-for-Universal\contributing.md" />
-    <Content Include="GitHub\Framework-for-Universal\LICENSE" />
-    <Content Include="GitHub\Framework-for-Universal\README.md" />
-    <Content Include="GitHub\Framework-for-WebAPI\.gitattributes" />
-    <Content Include="GitHub\Framework-for-WebAPI\.gitignore" />
-    <Content Include="GitHub\Framework-for-WebAPI\coding-style.md" />
-    <Content Include="GitHub\Framework-for-WebAPI\contributing.md" />
-    <Content Include="GitHub\Framework-for-WebAPI\LICENSE" />
-    <Content Include="GitHub\Framework-for-WebAPI\README.md" />
-    <Content Include="GitHub\Framework-for-WPF\.gitattributes" />
-    <Content Include="GitHub\Framework-for-WPF\.gitignore" />
-    <Content Include="GitHub\Framework-for-WPF\coding-style.md" />
-    <Content Include="GitHub\Framework-for-WPF\contributing.md" />
-    <Content Include="GitHub\Framework-for-WPF\LICENSE" />
-    <Content Include="GitHub\Framework-for-WPF\README.md" />
-    <Content Include="GitHub\Framework\.gitattributes" />
-    <Content Include="GitHub\Framework\.gitignore" />
-    <Content Include="GitHub\Framework\coding-style.md" />
-    <Content Include="GitHub\Framework\contributing.md" />
-    <Content Include="GitHub\Framework\LICENSE" />
-    <Content Include="GitHub\Framework\README.md" />
     <Content Include="Keys\GenesysFramework.snk" />
-    <Content Include="Keys\GenesysFramework_2016.snk" />
     <Content Include="NuGet\Extensions.Standard.nuspec" />
     <Content Include="NuGet\Extensions.Core.nuspec" />
-    <Content Include="NuGet\Framework.DataAccess.Full.nuspec" />
-    <Content Include="NuGet\Framework.Interop.Portable.nuspec" />
-    <Content Include="NuGet\Framework.Models.Portable.nuspec" />
-    <Content Include="NuGet\Framework.Universal.nuspec" />
-    <Content Include="NuGet\Framework.Web.Full.nuspec" />
-    <Content Include="NuGet\Framework.Windows.nuspec" />
     <Content Include="Global.asax" />
-    <Content Include="GitHub\Framework-for-Core\.gitattributes" />
-    <Content Include="GitHub\Framework-for-Core\.gitignore" />
-    <Content Include="GitHub\Framework-for-Core\coding-style.md" />
-    <Content Include="GitHub\Framework-for-Core\contributing.md" />
-    <Content Include="GitHub\Framework-for-Core\LICENSE" />
-    <Content Include="GitHub\Framework-for-Core\README.md" />
-    <Content Include="NuGet\Entity.DataAccess.Core.nuspec" />
-    <Content Include="NuGet\Entity.Interop.Standard.nuspec" />
-    <Content Include="NuGet\Entity.Models.Standard.nuspec" />
-    <Content Include="NuGet\Entity.Web.Core.nuspec" />
-    <Content Include="Keys\GenesysEntity.snk" />
     <Content Include="Utility\GacUtil\gacutil.exe" />
     <Content Include="Utility\MsTest\assemblies\Interop.UIAutomationClient.dll" />
     <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.QualityTools.CodedUITestFramework.dll" />
@@ -222,101 +173,6 @@
     <Content Include="Utility\NuGet\nuget.exe" />
     <Content Include="Utility\SNK\sn.exe" />
     <Content Include="Utility\SNK\SNK Instructions.txt" />
-    <Content Include="VSIX\Framework.DataAccess.Core\DataAccess.Core.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.DataAccess.Core\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.DataAccess.Core\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.DataAccess.Full\DataAccess.Full.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.DataAccess.Full\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.DataAccess.Full\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.DataAccess.Shared\DataAccess.Shared.vstemplate" />
-    <Content Include="VSIX\Framework.DataAccess.Shared\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.DataAccess.Shared\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Database\Database.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Database\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Database\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.DesktopApp\DesktopApp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.DesktopApp\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.DesktopApp\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Interop.Portable\Interop.Portable.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Interop.Shared\Interop.Shared.vstemplate" />
-    <Content Include="VSIX\Framework.Interop.Shared\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Interop.Shared\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Interop.Standard\Interop.Standard.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Interop.Standard\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Interop.Standard\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Interop.Portable\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Interop.Portable\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Models.Shared\Models.Shared.vstemplate" />
-    <Content Include="VSIX\Framework.Models.Shared\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Models.Shared\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Models.Standard\Models.Standard.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Models.Standard\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Models.Standard\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Models.Portable\Models.Portable.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Models.Portable\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Models.Portable\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Test.Core\Test.Core.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Test.Core\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Test.Core\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.Test.Shared\Test.Shared.vstemplate" />
-    <Content Include="VSIX\Framework.Test.Shared\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Test.Shared\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.UniversalApp.Core\UniversalApp.Core.vstemplate" />
-    <Content Include="VSIX\Framework.UniversalApp.Core\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.UniversalApp.Core\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.WebApp.Core\WebApp.Core.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.WebApp.Core\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.WebApp.Core\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.WebServices.Core\WebServices.Core.vstemplate" />
-    <Content Include="VSIX\Framework.WebServices.Core\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.WebServices.Core\__TemplateIcon.png" />
-    <Content Include="VSIX\Mvc.vstemplate" />
-    <Content Include="VSIX\Uwp.vstemplate" />
-    <Content Include="VSIX\Core.vstemplate" />
-    <Content Include="VSIX\WebApi.vstemplate" />
-    <Content Include="VSIX\Wpf.vstemplate" />
-    <Content Include="VSIX\Framework.Test.Full\Test.Full.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.Test.Full\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.Test.Full\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.UniversalApp.Full\UniversalApp.Full.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="VSIX\Framework.UniversalApp.Full\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.UniversalApp.Full\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.WebApp.Full\WebApp.Full.vstemplate" />
-    <Content Include="VSIX\Framework.WebApp.Full\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.WebApp.Full\__TemplateIcon.png" />
-    <Content Include="VSIX\Framework.WebServices.Full\WebServices.Full.vstemplate" />
-    <Content Include="VSIX\Framework.WebServices.Full\__PreviewImage.PNG" />
-    <Content Include="VSIX\Framework.WebServices.Full\__TemplateIcon.png" />
-    <Content Include="VSIX\__PreviewImage.png" />
-    <Content Include="VSIX\__TemplateIconCore.png" />
-    <Content Include="VSIX\__TemplateIconMvc.png" />
-    <Content Include="VSIX\__TemplateIconUwp.png" />
-    <Content Include="VSIX\__TemplateIconWebApi.png" />
-    <Content Include="VSIX\__TemplateIconWpf.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -331,16 +187,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dashboard\Links-Genesys-AppKit.md" />
-    <Content Include="Dashboard\Links-Genesys-Environments.md" />
     <Content Include="Dashboard\Links-Genesys-Framework.md" />
-    <Content Include="Dashboard\Links-Genesys-Entities.md" />
     <Content Include="NuGet\Extensions.Portable.nuspec" />
     <Content Include="NuGet\Extensions.Full.nuspec" />
-    <Content Include="NuGet\Framework.DataAccess.Core.nuspec" />
-    <Content Include="NuGet\Framework.Interop.Standard.nuspec" />
-    <Content Include="NuGet\Framework.Models.Standard.nuspec" />
-    <Content Include="NuGet\Framework.Web.Core.nuspec" />
     <Content Include="Utility\GacUtil\gacutil.exe.config" />
     <Content Include="Utility\MsTest\MSTest.exe.config" />
     <Content Include="Utility\NuGet\NuGetCacheClear.bat" />
@@ -349,30 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GitHub\Entities\.gitattributes" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GitHub\Entities\.gitignore" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GitHub\Entities\coding-style.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GitHub\Entities\contributing.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GitHub\Entities\LICENSE" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GitHub\Entities\README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NuGet\Entity.All.MiddleTier.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NuGet\Entity.All.PresentationTier.nuspec" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
