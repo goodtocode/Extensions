@@ -43,7 +43,7 @@ namespace GoodToCode.Extras.Test
             }
             catch (HttpRequestException ex)
             {
-                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host"));
+                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
             }
             finally
             {
@@ -65,7 +65,7 @@ namespace GoodToCode.Extras.Test
             }
             catch (HttpRequestException ex)
             {
-                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host"));
+                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
             }
             finally
             {

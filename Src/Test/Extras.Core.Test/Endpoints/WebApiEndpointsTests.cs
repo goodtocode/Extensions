@@ -97,7 +97,7 @@ namespace GoodToCode.Extras.Test
             }
             catch (HttpRequestException ex)
             {
-                Assert.IsTrue(ex.Message.Contains("No such host"));
+                Assert.IsTrue(ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
             }
         }
 
@@ -122,7 +122,7 @@ namespace GoodToCode.Extras.Test
             }
             catch (HttpRequestException ex)
             {
-                Assert.IsTrue(ex.Message.Contains("No such host"));
+                Assert.IsTrue(ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
             }
         }
 
@@ -155,7 +155,7 @@ namespace GoodToCode.Extras.Test
             }
             catch (HttpRequestException ex)
             {
-                Assert.IsTrue(ex.Message.Contains("No such host"));
+                Assert.IsTrue(ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
             }
         }
 
@@ -183,7 +183,7 @@ namespace GoodToCode.Extras.Test
             }
             catch (HttpRequestException ex)
             {
-                Assert.IsTrue(ex.Message.Contains("No such host"));
+                Assert.IsTrue(ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
             }
         }
     }
