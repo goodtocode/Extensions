@@ -136,7 +136,7 @@
     <Content Include="GitHub\Extensions\contributing.md" />
     <Content Include="GitHub\Extensions\LICENSE" />
     <Content Include="GitHub\Extensions\README.md" />
-    <Content Include="Keys\GenesysFramework.snk" />
+    <Content Include="Keys\GoodToCodeFramework.snk" />
     <Content Include="NuGet\Extensions.Standard.nuspec" />
     <Content Include="NuGet\Extensions.Core.nuspec" />
     <Content Include="Global.asax" />
@@ -187,7 +187,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dashboard\Links-Genesys-Framework.md" />
+    <Content Include="Dashboard\Links-GoodToCode-Framework.md" />
     <Content Include="NuGet\Extensions.Portable.nuspec" />
     <Content Include="NuGet\Extensions.Full.nuspec" />
     <Content Include="Utility\GacUtil\gacutil.exe.config" />
