@@ -172,10 +172,8 @@ namespace GoodToCode.Extras.Net
         public string ToString(string format, IFormatProvider formatProvider = null)
         {
             var returnValue = base.ToString();
-            if (formatProvider != null)
-            {
-                if (formatProvider.GetFormat(this.GetType()) is ICustomFormatter fmt) { return fmt.Format(format, this, formatProvider); }
-            }
+            if (formatProvider != null && formatProvider.GetFormat(GetType()) is ICustomFormatter fmt)
+            { return fmt.Format(format, this, formatProvider); }
             switch (format)
             {
                 case "G":
