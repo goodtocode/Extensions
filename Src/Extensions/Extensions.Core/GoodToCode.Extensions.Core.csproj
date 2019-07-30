@@ -36,17 +36,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="System.Web.Mvc\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\Extensions.Shared\System.Web\HttpRequestExtension.cs">
-      <Link>System.Web\HttpRequestExtension.cs</Link>
-    </Compile>
-    <Compile Include="..\Extensions.Shared\System.Web.Mvc\ModelDictionaryExtension.cs">
-      <Link>System.Web.Mvc\ModelDictionaryExtension.cs</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Extensions.Standard\GoodToCode.Extensions.Standard.csproj" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">

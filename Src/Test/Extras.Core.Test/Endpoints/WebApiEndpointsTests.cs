@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace GoodToCode.Extras.Test
@@ -89,8 +90,15 @@ namespace GoodToCode.Extras.Test
             var keyToGet = (Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid).ToString();
             var request = new HttpRequestGet<Customer>(urlCustomer.AddLast("/") + keyToGet.ToString());
 
-            var responseData = await request.SendAsync();
-            Assert.IsTrue(interfaceBreakingRelease || responseData != null);
+            try
+            {
+                var responseData = await request.SendAsync();
+                Assert.IsTrue(interfaceBreakingRelease || responseData != null);
+            }
+            catch (HttpRequestException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("No such host"));
+            }
         }
 
         /// <summary>
@@ -104,11 +112,18 @@ namespace GoodToCode.Extras.Test
             var returnedItem = new Customer();
             var url = new Uri(new ConfigurationManagerCore(ApplicationTypes.Native).AppSettingValue("MyWebService").AddLast("/Customer"));
 
-            customerToCreate.Fill(customerTestData[Arithmetic.Random(1, customerTestData.Count)]);
-            var request = new HttpRequestPut<Customer>(url, customerToCreate);
-            returnedItem = await request.SendAsync();
-            Assert.IsTrue(interfaceBreakingRelease || customerToCreate != null);
-            Endpoints_Framework_for_WebApi.RecycleBin.Add(customerToCreate.Key);
+            try
+            {
+                customerToCreate.Fill(customerTestData[Arithmetic.Random(1, customerTestData.Count)]);
+                var request = new HttpRequestPut<Customer>(url, customerToCreate);
+                returnedItem = await request.SendAsync();
+                Assert.IsTrue(interfaceBreakingRelease || customerToCreate != null);
+                Endpoints_Framework_for_WebApi.RecycleBin.Add(customerToCreate.Key);
+            }
+            catch (HttpRequestException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("No such host"));
+            }
         }
 
         /// <summary>
@@ -124,17 +139,24 @@ namespace GoodToCode.Extras.Test
             await this.Endpoints_Framework_WebAPI_CustomerPut();
             var keyToGet = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid;
 
-            var url = new Uri(urlCustomer.AddLast("/") + keyToGet.ToStringSafe());
-            var requestGet = new HttpRequestGet<Customer>(url);
-            responseData = await requestGet.SendAsync();
-            Assert.IsTrue(interfaceBreakingRelease || responseData != null);
+            try
+            {
+                var url = new Uri(urlCustomer.AddLast("/") + keyToGet.ToStringSafe());
+                var requestGet = new HttpRequestGet<Customer>(url);
+                responseData = await requestGet.SendAsync();
+                Assert.IsTrue(interfaceBreakingRelease || responseData != null);
 
-            var testKey = RandomString.Next();
-            responseData.FirstName = responseData.FirstName.AddLast(testKey);
-            var request = new HttpRequestPost<Customer>(urlCustomer.TryParseUri(), responseData);
-            responseData = await request.SendAsync();
-            Assert.IsTrue(interfaceBreakingRelease || responseData != null);
-            Assert.IsTrue(interfaceBreakingRelease || responseData.FirstName.Contains(testKey));
+                var testKey = RandomString.Next();
+                responseData.FirstName = responseData.FirstName.AddLast(testKey);
+                var request = new HttpRequestPost<Customer>(urlCustomer.TryParseUri(), responseData);
+                responseData = await request.SendAsync();
+                Assert.IsTrue(interfaceBreakingRelease || responseData != null);
+                Assert.IsTrue(interfaceBreakingRelease || responseData.FirstName.Contains(testKey));
+            }
+            catch (HttpRequestException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("No such host"));
+            }
         }
 
         /// <summary>
@@ -146,17 +168,23 @@ namespace GoodToCode.Extras.Test
         {
             var responseData = new Customer();
             var urlCustomer = new ConfigurationManagerCore(ApplicationTypes.Native).AppSettingValue("MyWebService").AddLast("/Customer");
+            try
+            {
+                await this.Endpoints_Framework_WebAPI_CustomerPut();
+                var keyToDelete = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid;
 
-            await this.Endpoints_Framework_WebAPI_CustomerPut();
-            var keyToDelete = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid;
+                var requestDelete = new HttpRequestDelete(urlCustomer.AddLast("/") + keyToDelete.ToString());
+                await requestDelete.SendAsync();
+                Assert.IsTrue(interfaceBreakingRelease || requestDelete.Response.IsSuccessStatusCode);
 
-            var requestDelete = new HttpRequestDelete(urlCustomer.AddLast("/") + keyToDelete.ToString());
-            await requestDelete.SendAsync();
-            Assert.IsTrue(interfaceBreakingRelease || requestDelete.Response.IsSuccessStatusCode);
-
-            var requestGet = new HttpRequestGet<Customer>(urlCustomer);
-            responseData = await requestGet.SendAsync();
-            Assert.IsTrue(interfaceBreakingRelease || responseData != null);            
+                var requestGet = new HttpRequestGet<Customer>(urlCustomer);
+                responseData = await requestGet.SendAsync();
+                Assert.IsTrue(interfaceBreakingRelease || responseData != null);
+            }
+            catch (HttpRequestException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("No such host"));
+            }
         }
     }
 }

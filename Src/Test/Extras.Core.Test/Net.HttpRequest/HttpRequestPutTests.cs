@@ -22,7 +22,7 @@ using GoodToCode.Extras.Configuration;
 using GoodToCode.Extras.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace GoodToCode.Extras.Test
@@ -40,11 +40,11 @@ namespace GoodToCode.Extras.Test
             {
                 dataOut = await request.SendAsync();
                 Assert.IsTrue(request.Response.IsSuccessStatusCode);
-                throw new WebException();
+                throw new HttpRequestException();
             }
-            catch(WebException)
+            catch (HttpRequestException ex)
             {
-                Assert.IsTrue(dataOut != null);
+                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host"));
             }
             finally
             {                
@@ -62,11 +62,11 @@ namespace GoodToCode.Extras.Test
             {
                 dataOut = await request.SendAsync();
                 Assert.IsTrue(request.Response.IsSuccessStatusCode);
-                throw new WebException();
+                throw new HttpRequestException();
             }
-            catch (WebException)
+            catch (HttpRequestException ex)
             {
-                Assert.IsTrue(dataOut != null);
+                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host"));
             }
             finally
             {
