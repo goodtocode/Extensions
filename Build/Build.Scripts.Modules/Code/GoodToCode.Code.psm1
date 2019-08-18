@@ -131,7 +131,7 @@ function Clear-Lib
  	 [string[]]$Include = ("*.snk", "*.zip", "*.log", "*.bak", "*.tmp,  *.vspscc", "*.vssscc", "*.csproj.vspscc", "*.sqlproj.vspscc", "*.cache"),
  	 [string]$Exclude = ""
 	)
-	Write-Host "Clear-Solution -Path $Path -Include $Include -Exclude $Exclude"
+	Write-Host "Clear-Lib -Path $Path -Include $Include -Exclude $Exclude"
 	$Path = Set-Unc -Path $Path
 	$Path = Add-Prefix -String $Path -Add "\\"
 	# Cleanup Files
