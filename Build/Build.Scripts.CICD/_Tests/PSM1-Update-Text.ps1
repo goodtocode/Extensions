@@ -37,7 +37,4 @@ Import-Module "..\..\Build.Scripts.Modules\System\GoodToCode.System.psm1"
 # ***
 # *** Execute
 # ***
-[String] $DevenvExe = Find-DevEnv
-&"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe" C:\Source\Framework\3.00-Alpha\Extensions\Extensions.sln /Rebuild
-#-Path \\Dev-Vm-01.dev.GoodToCode.com\Vault\Builds\Sprints\2018.07\docs.GoodToCode.com\GoodToCode-Extensions\src\Extensions.sln 
-#Restore-Solution -Path C:\Source\Framework\3.00-Alpha\Extensions\Extensions.sln
+Update-Text -Path C:\Temp -Old ..\packages -New ..\..\packages -Include *.csproj
