@@ -87,7 +87,7 @@ Set-Location $RepoDir
 # Init
 & git init
 
-# Update with latest files
+# Copy $ArtifactDir to $RepoDir
 Get-ChildItem -Path $ArtifactDir | % { 
   Copy-Item $_.fullname "$RepoDir" -Recurse -Force 
 }
