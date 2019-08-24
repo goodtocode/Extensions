@@ -16,11 +16,13 @@ param(
 	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
 	[String]$TempDir = $(throw '-TempDir is a required parameter. c:\builds\1\t'),
 	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
-	[String]$OrgName = $(throw '-OrgName is a required parameter. GoodToCode'),
+	[String]$OrgName = $(throw '-OrgName is a required parameter.'),
 	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
-	[String]$RepoName = $(throw '-RepoName is a required parameter. Framework'),
-	[String]$User = 'GoodToCode',
-	[String]$Email = 'robert.good@goodtocode.com',
+	[String]$RepoName = $(throw '-RepoName is a required parameter.'),
+	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
+	[String]$User = $(throw '-User is a required parameter.'),
+	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
+	[String]$Email = $(throw '-Email is a required parameter.'),
 	[String]$PlatformDomain = 'github.com'
 )
 function Get-BasicAuthCreds {
