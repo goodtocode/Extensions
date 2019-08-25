@@ -36,7 +36,7 @@ function Get-BasicAuthCreds {
 # *** Initialize
 # ***
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
-$VerbosePreference = 'SilentlyContinue' # 'Continue'
+$VerbosePreference = 'Continue' # 'SilentlyContinue'
 [String]$ThisScript = $MyInvocation.MyCommand.Path
 [String]$ThisDir = Split-Path $ThisScript
 Set-Location $ThisDir # Ensure our location is correct, so we can use relative paths
@@ -69,7 +69,7 @@ Set-Location $TempDir
 # Pat as user (pops up login) $RepoUrl = "https://$Pat@$PlatformDomain/$OrgName/$RepoName.git"
 # Command fails: & cmdkey /generic:"git:$PlatformUrl" /user:"Personal Access Token" /pass:"$Pat"
 # Didnt work: $BasicCreds = Get-BasicAuthCreds -Username $Email -Password $Pw; Invoke-WebRequest -Uri $RepoUrl -Headers @{"Authorization"="Basic $BasicCreds"};
-#[String]$Pw = 'Virtualkidd1'; & cmdkey /generic:"git:$PlatformUrl" /user:"$User" /pass:"$Pw"
+# Didnt work: & cmdkey /generic:"git:$PlatformUrl" /user:"$User" /pass:"$Pw"
 
 # Ssh Agent
 # Start-Service ssh-agent

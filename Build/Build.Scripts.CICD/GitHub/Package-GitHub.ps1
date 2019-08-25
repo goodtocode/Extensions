@@ -59,5 +59,3 @@ Remove-Path -Path "$ArtifactDir\.vs"
 Remove-Path -Path "$ArtifactDir\Build"
 Remove-Path -Path "$ArtifactDir\Docs"
 Remove-Path -Path "$ArtifactDir\Vsix"
-# Add CD powershell Scripts
-Copy-File -Path "$SourceDir\Build\Build.Scripts.CICD\GitHub\Publish-GitHub.ps1" -Destination $ArtifactDir
