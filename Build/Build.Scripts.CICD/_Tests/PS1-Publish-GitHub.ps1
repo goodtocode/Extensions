@@ -1,5 +1,5 @@
-#-----------------------------------------------------------------------
-# <copyright file="Set-Version.ps1" company="GoodToCode">
+﻿#-----------------------------------------------------------------------
+# <copyright file="Framework-NuGet.ps1" company="GoodToCode">
 #      Copyright (c) GoodToCode. All rights reserved.
 #      All rights are reserved. Reproduction or transmission in whole or in part, in
 #      any form or by any means, electronic, mechanical or otherwise, is prohibited
@@ -10,16 +10,18 @@
 # ***
 # *** Parameters
 # ***
-param
-(
-    [string] $Path="C:\Temp"
+param(
+	[String]$TempDir = 'C:\Artifacts\t',
+	[String]$ArtifactDir = 'C:\Artifacts\a',
+	[String]$OrgName = 'GoodToCode',
+	[String]$RepoName = 'Extensions'	
 )
 
 # ***
 # *** Initialize
 # ***
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
-$VerbosePreference = 'SilentlyContinue' # 'Continue'
+$VerbosePreference = 'Continue' # 'SilentlyContinue'
 [String]$ThisScript = $MyInvocation.MyCommand.Path
 [String]$ThisDir = Split-Path $ThisScript
 [DateTime]$Now = Get-Date
@@ -28,28 +30,17 @@ Write-Host "*****************************"
 Write-Host "*** Starting: $ThisScript on $Now"
 Write-Host "*****************************"
 # Imports
-Import-Module "..\..\Build.Scripts.Modules\Code\GoodToCode.Code.psm1"
-Import-Module "..\..\Build.Scripts.Modules\System\GoodToCode.System.psm1"
 
 # ***
 # *** Validate and cleanse
 # ***
-$Path = Set-Unc -Path $Path
 
 # ***
 # *** Locals
 # ***
-$PathFull = [String]::Format("{0}\Sites\{1}\{2}", $Path, $Domain, $SubFolder)
-
-# ***
-# *** Pre-Execute
-# ***
-
 
 # ***
 # *** Execute
 # ***
-$GetVersion = Get-Version -Major 4
-Write-Host "Version: $GetVersion"
-
-Set-Version -Path $Path
+# Publish-Vsix
+& "..\GitHub\Publish-GitHub.ps1" -ArtifactDir $ArtifactDir -TempDir $TempDir -OrgName $OrgName -RepoName $RepoName

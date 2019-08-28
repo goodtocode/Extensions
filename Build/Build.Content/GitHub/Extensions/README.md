@@ -3,16 +3,10 @@
 <tbody>
 <tr>
 <td>
-
-<img alt="Your GoodToCode Source Framework" src="https://www.goodtocode.com/images/welcome/GoodToCode-Source-Logo-71x71-Transparent.png">
-
+<h2> GoodToCode .NET Extensions </h2>
 </td>
 <td>
-
-<h2> GoodToCode Source .NET Extensions </h2>
-
-<h4>One Framework - Your Data - Any Platform</h4>
-
+<h4>Extension Methods and Helpers</h4>
 </td>
 </tr>
 <tr>
@@ -20,7 +14,7 @@
 
 ### Features & Benefits
 
-GoodToCode Source .NET Extension is a cross-platform common-library of .NET Core extension methods and extra classes. Built to support the GoodToCode Source Framework...an open-source, cross-platform, full-stack .NET solution that centralizes your business objects in one reusable solution.
+GoodToCode .NET Extension is a cross-platform common-library of .NET Core extension methods and extra classes. Built to support the GoodToCode Framework...an open-source, cross-platform, full-stack .NET solution that centralizes your business objects in one reusable solution.
 
 </td>
 </tr>
@@ -32,7 +26,7 @@ GoodToCode Source .NET Extension is a cross-platform common-library of .NET Core
 
 <td style="vertical-align: top; border-left-color: rgb(213, 213, 213); border-left-width: 1px; border-left-style: solid;">
 
-### Projects included in the GoodToCode Source Framework
+### Projects included in the GoodToCode Framework
 
 <div>
 

@@ -1,5 +1,5 @@
-#-----------------------------------------------------------------------
-# <copyright file="Set-Version.ps1" company="GoodToCode">
+﻿#-----------------------------------------------------------------------
+# <copyright file="Framework-NuGet.ps1" company="GoodToCode">
 #      Copyright (c) GoodToCode. All rights reserved.
 #      All rights are reserved. Reproduction or transmission in whole or in part, in
 #      any form or by any means, electronic, mechanical or otherwise, is prohibited
@@ -10,16 +10,17 @@
 # ***
 # *** Parameters
 # ***
-param
-(
-    [string] $Path="C:\Temp"
+param(
+	[String]$SourceDir = 'D:\Source-GTC\Stack\Extensions', #'C:\Users\rober\source\repos\Extensions', # D:\Source-GTC\Stack\Extensions',
+	[String]$ArtifactDir = 'C:\Artifacts\a', 	
+	[String]$ProductName = 'Extensions'
 )
 
 # ***
 # *** Initialize
 # ***
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
-$VerbosePreference = 'SilentlyContinue' # 'Continue'
+$VerbosePreference = 'Continue' # 'SilentlyContinue'
 [String]$ThisScript = $MyInvocation.MyCommand.Path
 [String]$ThisDir = Split-Path $ThisScript
 [DateTime]$Now = Get-Date
@@ -28,28 +29,22 @@ Write-Host "*****************************"
 Write-Host "*** Starting: $ThisScript on $Now"
 Write-Host "*****************************"
 # Imports
-Import-Module "..\..\Build.Scripts.Modules\Code\GoodToCode.Code.psm1"
-Import-Module "..\..\Build.Scripts.Modules\System\GoodToCode.System.psm1"
+Import-Module "$SourceDir\Build\Build.Scripts.Modules\Code\GoodToCode.Code.psm1"
+Import-Module "$SourceDir\Build\Build.Scripts.Modules\System\GoodToCode.System.psm1"
 
 # ***
 # *** Validate and cleanse
 # ***
-$Path = Set-Unc -Path $Path
+$ArtifactDir = Set-Unc -Path $ArtifactDir
+$SourceDir = Set-Unc -Path $SourceDir
 
 # ***
 # *** Locals
-# ***
-$PathFull = [String]::Format("{0}\Sites\{1}\{2}", $Path, $Domain, $SubFolder)
-
-# ***
-# *** Pre-Execute
 # ***
 
 
 # ***
 # *** Execute
 # ***
-$GetVersion = Get-Version -Major 4
-Write-Host "Version: $GetVersion"
-
-Set-Version -Path $Path
+# Publish-Vsix
+& "$SourceDir\Build\Build.Scripts.CICD\GitHub\Package-GitHub.ps1" -SourceDir $SourceDir -ArtifactDir $ArtifactDir -ProductName $ProductName

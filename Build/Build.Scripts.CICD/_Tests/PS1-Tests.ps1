@@ -1,6 +1,6 @@
 ﻿#-----------------------------------------------------------------------
-# <copyright file="Framework-NuGet.ps1" company="GoodToCode Source">
-#      Copyright (c) GoodToCode Source. All rights reserved.
+# <copyright file="Framework-NuGet.ps1" company="GoodToCode">
+#      Copyright (c) GoodToCode. All rights reserved.
 #      All rights are reserved. Reproduction or transmission in whole or in part, in
 #      any form or by any means, electronic, mechanical or otherwise, is prohibited
 #      without the prior written consent of the copyright owner.
@@ -11,12 +11,12 @@
 # *** Parameters
 # ***
 param(
-	[String]$Path = '\\Dev-Vm-01.dev.goodtocode.com\Vault\Drops', 
-	[String]$Domain = 'nuget.goodtocode.com',
-	[String]$Database = 'DatabaseServer.dev.goodtocode.com',
+	[String]$Path = '\\Dev-Vm-01.dev.GoodToCode.com\Vault\Drops', 
+	[String]$Domain = 'nuget.GoodToCode.com',
+	[String]$Database = 'DatabaseServer.dev.GoodToCode.com',
 	[String]$ProductName = "Entities",
 	[String]$RepoName = "GoodToCode-Entities",
-	[String]$Build = '\\Dev-Vm-01.dev.goodtocode.com\Vault\Builds\Sprints',
+	[String]$Build = '\\Dev-Vm-01.dev.GoodToCode.com\Vault\Builds\Sprints',
 	[String]$SubFolder = 'Packages',
 	[String]$Lib='\lib',
 	[String]$Relative='..\..\'
