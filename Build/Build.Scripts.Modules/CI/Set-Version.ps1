@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------
-# <copyright file="Set-Version.ps1" company="GoodToCode Source">
-#      Copyright (c) GoodToCode Source. All rights reserved.
+# <copyright file="Set-Version.ps1" company="GoodToCode">
+#      Copyright (c) GoodToCode. All rights reserved.
 #      All rights are reserved. Reproduction or transmission in whole or in part, in
 #      any form or by any means, electronic, mechanical or otherwise, is prohibited
 #      without the prior written consent of the copyright owner.
@@ -13,7 +13,8 @@
 param
 (
 	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
-    [string] $Path=""
+    [string] $Path= $(throw '-Path is a required parameter. $(Build.SourcesDirectory)'),
+	[Version] $Version= "4.19"
 )
 
 # ***
@@ -29,8 +30,8 @@ Write-Host "*****************************"
 Write-Host "*** Starting: $ThisScript on $Now"
 Write-Host "*****************************"
 # Imports
-Import-Module "..\..\Build.Scripts.Modules\Code\GoodToCode.Code.psm1"
-Import-Module "..\..\Build.Scripts.Modules\System\GoodToCode.System.psm1"
+Import-Module "..\Code\GoodToCode.Code.psm1"
+Import-Module "..\System\GoodToCode.System.psm1"
 
 # ***
 # *** Validate and cleanse
@@ -41,13 +42,19 @@ $Path = Set-Unc -Path $Path
 # *** Locals
 # ***
 
-
-# ***
-# *** Pre-Execute
-# ***
-
-
 # ***
 # *** Execute
 # ***
-Set-Version -Path $Path
+[Version]$VersionToReplace = "4.19.01"
+[String]$Major = $Version.Major
+[String]$Minor = $Version.Minor
+[String]$Revision = $Version.Revision
+[String]$Build = $Version.Build
+
+Write-Host "Set-Version -Path $Path -Version $Version"
+# .Net Projects
+$CsVersion = Get-Version -Major $Major -Minor $Minor -Revision $Revision -Build $Build
+Update-ContentsByTag -Path $Path -Value $CsVersion -Open '<version>' -Close '</version>' -Include *.nuspec
+Update-LineByContains -Path $Path -Contains "AssemblyVersion(" -Line "[assembly: AssemblyVersion(""$CsVersion"")]" -Include AssemblyInfo.cs
+# Vsix Templates
+Update-TextByContains -Path $Path -Contains "<Identity Id" -Old $VersionToReplace -New $Version -Include *.vsixmanifest
