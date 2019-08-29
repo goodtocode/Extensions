@@ -198,7 +198,7 @@ function Get-Version
 		[String]$Build = '',
 		[String]$Format = 'M.YY.MM.HHH'
 	)	
-	Write-Verbose "Get-Version -Major $Major -Minor $Minor -Revision $Revision -Build $Build"
+	Write-Host "Get-Version -Major $Major -Minor $Minor -Revision $Revision -Build $Build"
 	[DateTime]$Now = Get-Date
 	[DateTime]$BoM = Get-Date -Year $Now.Year -Month $Now.Month -Day 1 -Hour 0 -Minute 0 -Second 0
 	[String]$returnValue = ''
