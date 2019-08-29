@@ -54,6 +54,7 @@ $Path = Set-Unc -Path $Path
 Write-Host "Set-Version -Path $Path -Version $Version"
 # .Net Projects
 $CsVersion = Get-Version -Major $Major -Minor $Minor -Revision $Revision -Build $Build
+Write-Host 
 Update-ContentsByTag -Path $Path -Value $CsVersion -Open '<version>' -Close '</version>' -Include *.nuspec
 Update-LineByContains -Path $Path -Contains "AssemblyVersion(" -Line "[assembly: AssemblyVersion(""$CsVersion"")]" -Include AssemblyInfo.cs
 # Vsix Templates
