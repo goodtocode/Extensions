@@ -54,8 +54,10 @@ $Year = get-date –format yy
 
 Write-Host "Set-Version -Path $Path -Version $Version"
 # .Net Projects
-$CsVersion = Get-Version -Major $Major -Minor $Minor -Revision $Revision -Build $Build
-Update-ContentsByTag -Path $Path -Value $CsVersion -Open '<version>' -Close '</version>' -Include *.nuspec
-Update-LineByContains -Path $Path -Contains "AssemblyVersion(" -Line "[assembly: AssemblyVersion(""$CsVersion"")]" -Include AssemblyInfo.cs
+$LongVersion = Get-Version -Major $Major -Minor $Minor -Revision $Revision -Build $Build
+$ShortVersion = Get-Version -Major $Major -Minor $Minor -Revision $Revision -Format 'M.YY.MM'
+Write-Host 
+Update-ContentsByTag -Path $Path -Value $LongVersion -Open '<version>' -Close '</version>' -Include *.nuspec
+Update-LineByContains -Path $Path -Contains "AssemblyVersion(" -Line "[assembly: AssemblyVersion(""$LongVersion"")]" -Include AssemblyInfo.cs
 # Vsix Templates
-Update-TextByContains -Path $Path -Contains "<Identity Id" -Old $VersionToReplace -New $Version -Include *.vsixmanifest
+Update-TextByContains -Path $Path -Contains "<Identity Id" -Old $VersionToReplace -New $ShortVersion -Include *.vsixmanifest
