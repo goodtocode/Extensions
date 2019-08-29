@@ -1389,6 +1389,72 @@ function Update-Text
 export-modulemember -function Update-Text
 
 #-----------------------------------------------------------------------
+# Update-TextByContains [-Path [<String>]]
+#                  [-Contains [<String[]>] [-Close [<String[]>]]
+#
+# Example: .\Update-TextByContains -Path \\source\path -Include AssemblyInfo.cs -Contains 'AssemblyVersion(' -Line '[assembly: AssemblyVersion("4.18.05")]'
+#-----------------------------------------------------------------------
+function Update-TextByContains
+{
+	param (		
+ 		[string]$Path = $(throw '-Path is a required parameter.'),
+		[string]$Contains = $(throw '-Contains is a required parameter.'),
+		[string]$Old = $(throw '-Old is a required parameter.'),
+		[string]$New = $(throw '-New is a required parameter.'),
+		[string[]]$Include = "*.*",
+ 		[string[]]$Exclude = "",
+		[Int32]$First = 100
+	)
+	Write-Host "Update-TextByContains -Path $Path -Contains $Contains -Old $Old -New $New -Include $Include -Exclude $Exclude -First $First"
+	$Path = Remove-Suffix -String $Path -Remove "\"
+	if (Test-Path $Path)
+	{
+		$Contains = $Contains.Trim()
+		$Count = 0
+		$Files = Get-Childitem -Path $Path -Include $Include -Exclude $Exclude -Recurse -Force | select -First $First
+		ForEach ($File in $Files)
+		{
+			[Int32]$FoundIndex = -1
+			[String]$FoundLine = ''
+			$Affected = 0
+			$Content=Get-Content $File.PSPath
+			# Search for matches
+			For([Int32]$Count = 0; $Count -lt $Content.Length; $Count++)
+			{
+				$CurrentLine = $Content[$Count].Trim()
+				If(($FoundIndex -eq -1) -and ($CurrentLine.ToLowerInvariant().Contains($Contains.ToLowerInvariant())))
+				{
+					$FoundIndex = $Count
+					$FoundLine = $CurrentLine
+					Break
+				}
+			}
+			# Evaluate search
+			If($FoundIndex -gt -1)
+			{			
+			    # Replace text inside of line
+				$NewLine = $FoundLine.Replace($Old, $New)
+				# Select before line, add $NewLine, select after line
+				$NewContent = (($Content | Select -First $FoundIndex) + ($NewLine + [Environment]::NewLine) + ($Content | select -Last ($Content.Length - $FoundIndex -1)))
+			}
+			else
+			{
+				# No Match Found
+				$NewContent = $Content
+			}
+			Set-Content $File.PSPath -Value $NewContent
+			$Affected = $Count
+		}
+		Write-Verbose "[Success] $Count items affected. $(Get-CurrentFile) at $(Get-CurrentLine)."
+	}
+	else
+	{
+		Write-Verbose "[OK] 0 items affected. $(Get-CurrentFile) at $(Get-CurrentLine)."
+	}
+}
+export-modulemember -function Update-TextByContains
+
+#-----------------------------------------------------------------------
 # Update-TextByTable [-Path [<String>]] [-Replace [<hashtable>]]
 #                  [-Include [<String[]>] [-Exclude [<String[]>]]
 #
