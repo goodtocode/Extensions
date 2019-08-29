@@ -49,7 +49,7 @@ $Year = get-date –format yy
 [String]$VersionToReplace = "4.19.01"
 [String]$Major = $Version.Major.ToString()
 [String]$Minor = $Version.Minor.ToString()
-[String]$Revision = $Version.ToString()
+[String]$Revision = $Version.Revision.ToString()
 [String]$Build = $Version.Build.ToString()
 
 $Major = $Major.ToString().Replace('-1', '1')
