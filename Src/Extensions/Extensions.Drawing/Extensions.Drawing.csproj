@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
     <AssemblyName>GoodToCode.Extensions.Drawing</AssemblyName>
     <RootNamespace>GoodToCode.Extensions.Drawing</RootNamespace>
   </PropertyGroup>
