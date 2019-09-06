@@ -5,7 +5,10 @@
     <AssemblyName>GoodToCode.Extensions.Drawing</AssemblyName>
     <RootNamespace>GoodToCode.Extensions.Drawing</RootNamespace>
   </PropertyGroup>
-
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Drawing.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
   </ItemGroup>
@@ -13,5 +16,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
   </ItemGroup>
-
 </Project>

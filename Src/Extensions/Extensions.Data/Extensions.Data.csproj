@@ -5,7 +5,10 @@
     <AssemblyName>GoodToCode.Extensions.Data</AssemblyName>
     <RootNamespace>GoodToCode.Extensions.Data</RootNamespace>
   </PropertyGroup>
-
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Data.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>

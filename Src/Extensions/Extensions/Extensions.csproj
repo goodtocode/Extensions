@@ -25,7 +25,7 @@
     <AssemblyName>GoodToCode.Extensions</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.xml</DocumentationFile>
     <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
