@@ -53,16 +53,5 @@ namespace GoodToCode.Extensions
 
             return returnValue;
         }
-
-        /// <summary>
-        /// Validates a stream to be a image-like type and is less than a maximum size
-        /// </summary>
-        /// <param name="item">Stream array to check for image</param>
-        /// <param name="maxSizeInKb">Default is 4 Mb</param>
-        /// <returns>True if stream is image</returns>
-        public static bool IsImage(this Stream item, int maxSizeInKb = 4096)
-        {            
-            return new Bitmap(item).ToBytes().IsImage(maxSizeInKb);
-        }
     }
 }

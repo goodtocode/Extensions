@@ -1,6 +1,7 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="RouteMappingTests.cs" company="GoodToCode">
-//      Copyright (c) GoodToCode. All rights reserved.
+//-----------------------------------------------------------------------
+// <copyright file="StreamExtension.cs" company="GoodToCode">
+//      Copyright (c) 2017-2020 GoodToCode. All rights reserved.
+// 
 //      Licensed to the Apache Software Foundation (ASF) under one or more 
 //      contributor license agreements.  See the NOTICE file distributed with 
 //      this work for additional information regarding copyright ownership.
@@ -17,19 +18,27 @@
 //       limitations under the License. 
 // </copyright>
 //-----------------------------------------------------------------------
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GoodToCode.Extras.Web.Http;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Xml.Linq;
 
-namespace GoodToCode.Extras.Test
+namespace GoodToCode.Extensions
 {
-    [TestClass()]
-    public class RouteMappingTests
+    /// <summary>
+    /// Extension methods to the System.IO.Stream class
+    /// </summary>
+    public static class StreamExtension
     {
-        [TestMethod()]
-        public void Core_Web_Http_RouteMapping()
-        {
-            var custom = new RouteMapping("CustomRoute" ,"/CustomPath", new { controller = "Custom", action = "ActionMethod" });
-            Assert.IsTrue(custom.ToString() != string.Empty);
+        /// <summary>
+        /// Validates a stream to be a image-like type and is less than a maximum size
+        /// </summary>
+        /// <param name="item">Stream array to check for image</param>
+        /// <param name="maxSizeInKb">Default is 4 Mb</param>
+        /// <returns>True if stream is image</returns>
+        public static bool IsImage(this Stream item, int maxSizeInKb = 4096)
+        {            
+            return new Bitmap(item).ToBytes().IsImage(maxSizeInKb);
         }
     }
 }

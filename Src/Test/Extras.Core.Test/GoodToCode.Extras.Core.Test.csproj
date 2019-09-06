@@ -86,6 +86,9 @@
       <DependentUpon>appsettings.json</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web.Http\" />
+  </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PreBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
