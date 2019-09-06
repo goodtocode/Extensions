@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>GoodToCode.Extensions.Net</AssemblyName>
+    <RootNamespace>GoodToCode.Extensions.Net</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

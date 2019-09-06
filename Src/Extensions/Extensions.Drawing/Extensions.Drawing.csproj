@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>GoodToCode.Extensions.Drawing</AssemblyName>
+    <RootNamespace>GoodToCode.Extensions.Drawing</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

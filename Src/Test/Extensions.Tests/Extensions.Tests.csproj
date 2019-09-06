@@ -22,6 +22,7 @@
     <RepositoryUrl>http://www.github.com/goodtocode/extensions</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>.NET Core, .NET Framework, Common Library, .NET Extensions</PackageTags>
+    <AssemblyName>GoodToCode.Extensions.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile></DocumentationFile>
