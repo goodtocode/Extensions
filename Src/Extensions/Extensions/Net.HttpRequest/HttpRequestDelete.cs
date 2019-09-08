@@ -56,6 +56,28 @@ namespace GoodToCode.Extensions.Net
         /// Warning: Not thread safe, particularly in Web-based UIs. This is a stopgap to allow legacy code to operate with blocking/deadlock risk.
         /// </summary>
         /// <returns>Result</returns>
+        public bool Delete()
+        {
+            var client = Task.Run<HttpResponseMessage>(async () => await Client.DeleteAsync(Url));
+            var Response = client.Result;
+            return Response.IsSuccessStatusCode;
+        }
+
+        /// <summary>
+        /// Asynchronously sends a GET request, Receives strongly typed response
+        /// </summary>
+        /// <returns>Response data</returns>
+        public async Task<bool> DeleteAsync()
+        {
+            Response = await Client.DeleteAsync(Url);
+            return Response.IsSuccessStatusCode;
+        }
+
+        /// <summary>
+        /// Synchronously sends a GET request, Receives string response
+        /// Warning: Not thread safe, particularly in Web-based UIs. This is a stopgap to allow legacy code to operate with blocking/deadlock risk.
+        /// </summary>
+        /// <returns>Result</returns>
         public override string Send()
         {
             var client = Task.Run<HttpResponseMessage>(async () => await Client.DeleteAsync(Url));
