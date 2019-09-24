@@ -51,9 +51,7 @@ namespace GoodToCode.Extensions
             var returnValue = Defaults.Boolean;
 
             if (item.IsHttps | item.Path.ToStringSafe().Contains("://localhost"))
-            {
                 returnValue = true;
-            }
 
             return returnValue;
         }
@@ -91,22 +89,8 @@ namespace GoodToCode.Extensions
         {
             string urlComplete;
 
-            if (protocol == null || protocol == "0")
-            {
-                protocol = "http://";
-            }
-            else
-            {
-                protocol = "https://";
-            }
-            if (port == null || port == "80" || port == "443")
-            {
-                port = "";
-            }
-            else
-            {
-                port = ":" + port;
-            }
+            protocol = protocol == null || protocol == "0" ? "http://" : "https://";
+            port = port == null || port == "80" || port == "443" ? "" : ":" + port;
             urlComplete = protocol + serverName + port + applicationPath;
             urlComplete = urlComplete.RemoveLast("/");
 
