@@ -89,7 +89,7 @@ namespace GoodToCode.Extensions
         /// <returns>Constructed url</returns>
         public static string ConstructUrl(string protocol, string serverName, string port, string applicationPath)
         {
-            var urlComplete = Defaults.String;
+            string urlComplete;
 
             if (protocol == null || protocol == "0")
             {
