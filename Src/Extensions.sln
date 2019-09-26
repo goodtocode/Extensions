@@ -3,21 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{52B1014D-5296-47EF-9CBA-F14F88825CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Data", "Extensions.Data\Extensions.Data.csproj", "{58D8F163-D793-48C8-B737-37B7E4A074F1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{421AB60D-E150-425F-AB9A-091B8DB00C3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Drawing", "Extensions.Drawing\Extensions.Drawing.csproj", "{C6CCDDA7-1B4F-40FF-ACA2-A9765DA81ACB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Data", "Extensions\Extensions.Data\Extensions.Data.csproj", "{58D8F163-D793-48C8-B737-37B7E4A074F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Configuration", "Extensions.Configuration\Extensions.Configuration.csproj", "{A74CE451-7A5A-499D-90FE-DC654C9C3D8A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Drawing", "Extensions\Extensions.Drawing\Extensions.Drawing.csproj", "{C6CCDDA7-1B4F-40FF-ACA2-A9765DA81ACB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Net", "Extensions.Net\Extensions.Net.csproj", "{7A856875-B5F9-494B-9AD2-B014ACA8107D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Configuration", "Extensions\Extensions.Configuration\Extensions.Configuration.csproj", "{A74CE451-7A5A-499D-90FE-DC654C9C3D8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extensions\Extensions.csproj", "{8A6EC1A6-E71B-4C67-833B-0144EBB8D3ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Net", "Extensions\Extensions.Net\Extensions.Net.csproj", "{7A856875-B5F9-494B-9AD2-B014ACA8107D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extensions\Extensions\Extensions.csproj", "{8A6EC1A6-E71B-4C67-833B-0144EBB8D3ED}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Tests", "Test\Extensions.Tests\Extensions.Tests.csproj", "{34EF1A5F-9410-4C58-AFFD-16A53C574D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Tests", "Extensions.Tests\Extensions.Tests.csproj", "{34EF1A5F-9410-4C58-AFFD-16A53C574D49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
