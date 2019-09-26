@@ -45,11 +45,11 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Extensions\Extensions.Configuration\Extensions.Configuration.csproj" />
-    <ProjectReference Include="..\..\Extensions\Extensions.Data\Extensions.Data.csproj" />
-    <ProjectReference Include="..\..\Extensions\Extensions.Drawing\Extensions.Drawing.csproj" />
-    <ProjectReference Include="..\..\Extensions\Extensions.Net\Extensions.Net.csproj" />
-    <ProjectReference Include="..\..\Extensions\Extensions\Extensions.csproj" />
+    <ProjectReference Include="..\Extensions.Configuration\Extensions.Configuration.csproj" />
+    <ProjectReference Include="..\Extensions.Data\Extensions.Data.csproj" />
+    <ProjectReference Include="..\Extensions.Drawing\Extensions.Drawing.csproj" />
+    <ProjectReference Include="..\Extensions.Net\Extensions.Net.csproj" />
+    <ProjectReference Include="..\Extensions\Extensions.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="App_Data\AppSettings.Debug.json">
