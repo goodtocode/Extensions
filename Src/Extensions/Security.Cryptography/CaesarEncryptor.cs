@@ -1,22 +1,3 @@
-//-----------------------------------------------------------------------
-// <copyright file="CaesarEncryptor.cs" company="GoodToCode">
-//      Copyright (c) 2017-2020 GoodToCode. All rights reserved.
-//      Licensed to the Apache Software Foundation (ASF) under one or more 
-//      contributor license agreements.  See the NOTICE file distributed with 
-//      this work for additional information regarding copyright ownership.
-//      The ASF licenses this file to You under the Apache License, Version 2.0 
-//      (the 'License'); you may not use this file except in compliance with 
-//      the License.  You may obtain a copy of the License at 
-//       
-//        http://www.apache.org/licenses/LICENSE-2.0 
-//       
-//       Unless required by applicable law or agreed to in writing, software  
-//       distributed under the License is distributed on an 'AS IS' BASIS, 
-//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-//       See the License for the specific language governing permissions and  
-//       limitations under the License. 
-// </copyright>
-//-----------------------------------------------------------------------
 using System;
 using System.Text;
 using GoodToCode.Extensions;
@@ -72,13 +53,12 @@ namespace GoodToCode.Extensions.Security.Cryptography
         /// </summary>
         public string Encrypt(string originalString)
         {
-            var returnValue = Defaults.String;
-            var shiftedString = Defaults.String;
             byte[] encryptedByte;
 
+            string returnValue;
             try
             {
-                shiftedString = this.ShiftString(originalString, this.Key.TryParseInt16());
+                string shiftedString = this.ShiftString(originalString, this.Key.TryParseInt16());
                 encryptedByte = Encoding.Unicode.GetBytes(shiftedString);
                 returnValue = Convert.ToBase64String(encryptedByte);
                 if (this.EncodeForURL)
@@ -101,9 +81,9 @@ namespace GoodToCode.Extensions.Security.Cryptography
         /// <param name="originalString"></param>
         public string Decrypt(string originalString)
         {
-            var returnValue = Defaults.String;
             byte[] encryptedByte;
 
+            string returnValue;
             try
             {
                 originalString = this.EncodeForURL == true ? UrlEncoder.Decode(originalString) : originalString;
@@ -111,9 +91,8 @@ namespace GoodToCode.Extensions.Security.Cryptography
                 originalString = Encoding.Unicode.GetString(encryptedByte, 0, encryptedByte.Length);
                 returnValue = this.ShiftString(originalString, Arithmetic.Multiply(this.Key.TryParseInt16(), -1).ToShort());
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                returnValue = ex.Message;
                 returnValue = Defaults.String;
             }
 
@@ -129,14 +108,13 @@ namespace GoodToCode.Extensions.Security.Cryptography
         private string ShiftString(string source, short shift)
         {
             var returnValue = Defaults.String;
-            var shiftedValue = Defaults.Integer;
             var charMax = Convert.ToInt32(char.MaxValue);
             var charMin = Convert.ToInt32(char.MinValue);
             char[] chars = source.ToCharArray();
 
             for (var Count = 0; Count < chars.Length; Count++)
             {
-                shiftedValue = Convert.ToInt32(chars[Count]) + shift;
+                int shiftedValue = Convert.ToInt32(chars[Count]) + shift;
 
                 if (shiftedValue > charMax)
                 {

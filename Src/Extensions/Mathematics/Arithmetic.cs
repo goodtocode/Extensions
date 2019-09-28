@@ -1,22 +1,3 @@
-//-----------------------------------------------------------------------
-// <copyright file="Arithmetic.cs" company="GoodToCode">
-//      Copyright (c) 2017-2020 GoodToCode. All rights reserved.
-//      Licensed to the Apache Software Foundation (ASF) under one or more 
-//      contributor license agreements.  See the NOTICE file distributed with 
-//      this work for additional information regarding copyright ownership.
-//      The ASF licenses this file to You under the Apache License, Version 2.0 
-//      (the 'License'); you may not use this file except in compliance with 
-//      the License.  You may obtain a copy of the License at 
-//       
-//        http://www.apache.org/licenses/LICENSE-2.0 
-//       
-//       Unless required by applicable law or agreed to in writing, software  
-//       distributed under the License is distributed on an 'AS IS' BASIS, 
-//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-//       See the License for the specific language governing permissions and  
-//       limitations under the License. 
-// </copyright>
-//-----------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using GoodToCode.Extensions;
@@ -94,8 +75,6 @@ namespace GoodToCode.Extensions.Mathematics
         public static int Divide(int dividend, int divisor)
         {
             var returnValue = Defaults.Integer;
-            var Remainder = Defaults.Integer;
-
             if (divisor > 0)
             {
                 returnValue = (dividend / divisor);
@@ -137,7 +116,7 @@ namespace GoodToCode.Extensions.Mathematics
 
             foreach (decimal lineItem in lineItems)
             {
-                Sum = Sum + lineItem;
+                Sum += lineItem;
             }
             if (lineItems.Count > 0)
             {
@@ -173,13 +152,12 @@ namespace GoodToCode.Extensions.Mathematics
         /// <returns>Random number</returns>
         public static int Random(int digits = 4)
         {
-            var returnValue = Defaults.Integer;
 
             // Handle for Int32 limitation of 2,147,483,647, low 10 digits
             digits = digits < 1 ? 1 : digits > 10 ? 10 : digits;
             var floor = Convert.ToInt32(Math.Pow(10, digits - 1));
             var ceiling = Convert.ToInt32((floor * 10) - 1);
-            returnValue = Arithmetic.Random(floor, ceiling);
+            int returnValue = Random(floor, ceiling);
 
             return returnValue;
         }
@@ -192,8 +170,7 @@ namespace GoodToCode.Extensions.Mathematics
         /// <returns>Random integer value</returns>
         public static int Random(int minValue, int maxValue)
         {
-            var returnValue = Defaults.Integer;
-            returnValue = Arithmetic.RandomGenerator.Next(minValue, maxValue);
+            int returnValue = RandomGenerator.Next(minValue, maxValue);
 
             return returnValue;
         }
@@ -209,9 +186,9 @@ namespace GoodToCode.Extensions.Mathematics
             while (num1 != num2)
             {
                 if (num1 > num2)
-                    num1 = num1 - num2;
+                    num1 -= num2;
                 if (num2 > num1)
-                    num2 = num2 - num1;
+                    num2 -= num1;
             }
 
             return num1;
@@ -237,13 +214,11 @@ namespace GoodToCode.Extensions.Mathematics
         /// <returns>Width given original item was resized</returns>
         public static int WidthGet(int originalWidth, int originanHeight, int newHeight)
         {
-            var newWidth = Defaults.Integer;
-            var multiplier = Defaults.Decimal;
 
             // Height is only specified, have to calculate width
-            multiplier = Arithmetic.Divide(newHeight.ToDecimal(), originanHeight.ToDecimal());
+            decimal multiplier = Divide(newHeight.ToDecimal(), originanHeight.ToDecimal());
             // Resize
-            newWidth = Arithmetic.Multiply(originalWidth.ToDecimal(), multiplier).ToInt();
+            int newWidth = Multiply(originalWidth.ToDecimal(), multiplier).ToInt();
 
             return newWidth;
         }

@@ -1,22 +1,3 @@
-//-----------------------------------------------------------------------
-// <copyright file="StringExtension.cs" company="GoodToCode">
-//      Copyright (c) 2017-2020 GoodToCode. All rights reserved.
-//      Licensed to the Apache Software Foundation (ASF) under one or more 
-//      contributor license agreements.  See the NOTICE file distributed with 
-//      this work for additional information regarding copyright ownership.
-//      The ASF licenses this file to You under the Apache License, Version 2.0 
-//      (the 'License'); you may not use this file except in compliance with 
-//      the License.  You may obtain a copy of the License at 
-//       
-//        http://www.apache.org/licenses/LICENSE-2.0 
-//       
-//       Unless required by applicable law or agreed to in writing, software  
-//       distributed under the License is distributed on an 'AS IS' BASIS, 
-//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-//       See the License for the specific language governing permissions and  
-//       limitations under the License. 
-// </copyright>
-//-----------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,31 +56,30 @@ namespace GoodToCode.Extensions
         private static string FormatCasePascal(string uncasedString, string parseCharacter, bool useExistingCase = true)
         {
             var returnValue = Defaults.String;
-            string[] words = null;
-            var word = Defaults.String;
-            char firstLetter = Defaults.Char;
-            var count = Defaults.Integer;
-
-            words = uncasedString.Split(parseCharacter.ToCharArray());
+            string[] words = uncasedString.Split(parseCharacter.ToCharArray());
+            int count;
             for (count = 0; count <= words.Length - 1; count++)
             {
+                string word;
                 // Upper-case abbreviations (P.O., B.S.A.)
                 if ((words[count].Replace(".", string.Empty).Length == (words[count].Length / 2)))
                 {
                     word = words[count].ToUpperInvariant();
-                } else
+                }
+                else
                 {
                     if (useExistingCase == false)
                     {
                         word = words[count].ToLowerInvariant();
-                    } else
+                    }
+                    else
                     {
                         word = words[count];
                     }
                 }
                 if (word.Length > 0)
                 {
-                    firstLetter = char.ToUpperInvariant(word[0]);
+                    char firstLetter = char.ToUpperInvariant(word[0]);
                     returnValue = returnValue + firstLetter + word.Substring(1) + parseCharacter;
                 }
             }
@@ -117,15 +97,11 @@ namespace GoodToCode.Extensions
         private static string FormatCaseException(string uncasedString, string parseCharacter)
         {
             var returnValue = Defaults.String;
-            string[] words = null;
-            var word = Defaults.String;
-            var firstLetter = Defaults.Char;
-            var count = Defaults.Integer;
-
-            words = uncasedString.Split(parseCharacter.ToCharArray());
+            string[] words = uncasedString.Split(parseCharacter.ToCharArray());
+            int count;
             for (count = 0; count <= words.Length - 1; count++)
             {
-                word = words[count];
+                string word = words[count];
                 if (word.Length > 0)
                 {
                     switch (word.ToLowerInvariant())
@@ -250,7 +226,6 @@ namespace GoodToCode.Extensions
         /// <returns>True if this is an integer.</returns>
         public static bool IsInteger(this string item)
         {
-            var result = Defaults.Integer;
             var returnValue = Defaults.Boolean;
 
             if (item.TryParseInt64() != Defaults.Integer)
@@ -326,7 +301,7 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static bool TryParseBoolean(this string item, bool notFoundValue = false)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = notFoundValue;
             var convertValue = Defaults.Boolean;
 
             if (String.IsNullOrEmpty(item) == false)
@@ -352,13 +327,12 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static short TryParseInt16(this string item, short notFoundValue = -1)
         {
-            var returnValue = Defaults.Int16;
-            var convertValue = Defaults.Int16;
+            var returnValue = notFoundValue;
 
             // Try to parse it out
             if (String.IsNullOrEmpty(item) == false)
             {
-                if (Int16.TryParse(item, out convertValue))
+                if (Int16.TryParse(item, out short convertValue))
                 {
                     returnValue = convertValue;
                 }
@@ -375,12 +349,10 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static int TryParseInt32(this string item, int notFoundValue = -1)
         {
-            var returnValue = Defaults.Integer;
-            var convertValue = Defaults.Integer;
-
+            var returnValue = notFoundValue;
             if (String.IsNullOrEmpty(item) == false)
             {
-                if (int.TryParse(item, out convertValue))
+                if (int.TryParse(item, out int convertValue))
                 {
                     returnValue = convertValue;
                 }
@@ -397,12 +369,10 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static long TryParseInt64(this string item, long notFoundValue = -1)
         {
-            var returnValue = Defaults.Int64;
-            var convertValue = Defaults.Int64;
-
+            var returnValue = notFoundValue;
             if (String.IsNullOrEmpty(item) == false)
             {
-                if (Int64.TryParse(item, out convertValue))
+                if (Int64.TryParse(item, out long convertValue))
                 {
                     returnValue = convertValue;
                 }
@@ -417,9 +387,9 @@ namespace GoodToCode.Extensions
         /// <param name="item">Source item to convert</param>
         /// <param name="notFoundValue">Value if not found</param>
         /// <returns>Converted or not found value of the source item</returns>
-        public static Guid TryParseGuid(this string item, Guid notFoundValue =  default(Guid))
+        public static Guid TryParseGuid(this string item, Guid notFoundValue = default(Guid))
         {
-            var returnValue = Defaults.Guid;
+            var returnValue = notFoundValue;
 
             if (String.IsNullOrEmpty(item) == false)
             {
@@ -445,11 +415,9 @@ namespace GoodToCode.Extensions
         public static decimal TryParseDecimal(this string item, decimal notFoundValue = 0m)
         {
             var returnValue = Defaults.Decimal;
-            var convertValue = Defaults.Decimal;
-
             if (String.IsNullOrEmpty(item) == false)
             {
-                if (Decimal.TryParse(item, out convertValue))
+                if (Decimal.TryParse(item, out decimal convertValue))
                 {
                     returnValue = convertValue;
                 }

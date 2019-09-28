@@ -1,23 +1,4 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="DesEncryptorFull.cs" company="GoodToCode">
-//      Copyright (c) GoodToCode. All rights reserved.
-//      Licensed to the Apache Software Foundation (ASF) under one or more 
-//      contributor license agreements.  See the NOTICE file distributed with 
-//      this work for additional information regarding copyright ownership.
-//      The ASF licenses this file to You under the Apache License, Version 2.0 
-//      (the 'License'); you may not use this file except in compliance with 
-//      the License.  You may obtain a copy of the License at 
-//       
-//        http://www.apache.org/licenses/LICENSE-2.0 
-//       
-//       Unless required by applicable law or agreed to in writing, software  
-//       distributed under the License is distributed on an 'AS IS' BASIS, 
-//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-//       See the License for the specific language governing permissions and  
-//       limitations under the License. 
-// </copyright>
-//-----------------------------------------------------------------------
-using System;
+﻿using System;
 using System.Security.Cryptography;
 using System.Text;
 using GoodToCode.Extensions;
@@ -71,8 +52,7 @@ namespace GoodToCode.Extensions.Security.Cryptography
         /// </summary>
         public string Encrypt(string originalString)
         {
-            var returnValue = Defaults.String;
-
+            string returnValue;
             try
             {
                 var saltedString = originalString + this.Salt;
@@ -100,23 +80,23 @@ namespace GoodToCode.Extensions.Security.Cryptography
         /// <param name="encryptedString"></param>
         public string Decrypt(string encryptedString)
         {
-            var returnValue = Defaults.String;
-            var itemToDecrypt = Defaults.String;
-
+            string returnValue;
             try
             {
-                itemToDecrypt = encryptedString;
+                string itemToDecrypt = encryptedString;
                 if (this.EncodeForURL)
                 {
                     itemToDecrypt = UrlEncoder.Decode(encryptedString);
                 }
-                TripleDES des = CreateDes();
-                ICryptoTransform decryptor = des.CreateDecryptor();
-                var encryptedByte = Convert.FromBase64String(itemToDecrypt);
-                var decryptedByte = decryptor.TransformFinalBlock(encryptedByte, 0, encryptedByte.Length);
-                var decryptedSaltedString = Encoding.Unicode.GetString(decryptedByte);
-                // Final decryption and return
-                returnValue = decryptedSaltedString.Remove(decryptedSaltedString.Length - this.Salt.Length);
+                using (TripleDES des = CreateDes())
+                {
+                    ICryptoTransform decryptor = des.CreateDecryptor();
+                    var encryptedByte = Convert.FromBase64String(itemToDecrypt);
+                    var decryptedByte = decryptor.TransformFinalBlock(encryptedByte, 0, encryptedByte.Length);
+                    var decryptedSaltedString = Encoding.Unicode.GetString(decryptedByte);
+                    // Final decryption and return
+                    returnValue = decryptedSaltedString.Remove(decryptedSaltedString.Length - this.Salt.Length);
+                }
             }
             catch
             {
@@ -132,9 +112,11 @@ namespace GoodToCode.Extensions.Security.Cryptography
         /// </summary>
         private TripleDES CreateDes()
         {
-            MD5 md5Provider = new MD5CryptoServiceProvider();
             TripleDES returnValue = new TripleDESCryptoServiceProvider();
-            returnValue.Key = md5Provider.ComputeHash(Encoding.Unicode.GetBytes(this.Key));
+            using (MD5 md5Provider = new MD5CryptoServiceProvider())
+            {                
+                returnValue.Key = md5Provider.ComputeHash(Encoding.Unicode.GetBytes(this.Key));
+            }
             returnValue.IV = new byte[Convert.ToInt32(returnValue.BlockSize / 8 - 1) + 1];
 
             return returnValue;
