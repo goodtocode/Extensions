@@ -30,35 +30,12 @@ steps:
     SourceFolder: Docs
     Contents: '**/*.csproj'
 
-- task: DeleteFiles@1
-  displayName: 'Delete files from Quick-Starts'
-  inputs:
-    SourceFolder: 'Quick-Starts'
-    Contents: '**/*.csproj'
-
-- task: DeleteFiles@1
-  displayName: 'Delete files from Src'
-  inputs:
-    SourceFolder: Src
-    Contents: |
-     **/GoodToCode.Entity.Universal.csproj
-     **/Genesys.Entity.Windows.csproj
-
 - task: PowerShell@2
   displayName: 'PowerShell Script Set-Version.ps1'
   inputs:
     targetType: filePath
     filePath: './Build/Build.Scripts.Modules/CI/Set-Version.ps1'
     arguments: '-Path $(Build.SourcesDirectory)'
-
-- task: MSBuild@1
-  displayName: 'Build solution **/*.sqlproj'
-  inputs:
-    solution: '**/*.sqlproj'
-    platform: '$(BuildPlatform)'
-    configuration: '$(BuildConfiguration)'
-    msbuildArguments: '/p:OutDir=\lib\goodtocode-entities\contentFiles\any\any /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true'
-    clean: true
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
@@ -72,48 +49,40 @@ steps:
   displayName: 'dotnet build'
   inputs:
     projects: '**/*.csproj'
-    arguments: '--output \lib\goodtocode-entities --configuration $(BuildConfiguration)'
+    arguments: '--output \lib\goodtocode-extensions --configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet test'
   inputs:
     command: test
     projects: '**/*.csproj'
-  continueOnError: true
 
 - task: NuGetCommand@2
-  displayName: 'NuGet pack Entity.Abstractions.nuspec'
+  displayName: 'NuGet pack Extensions.nuspec'
   inputs:
     command: pack
-    packagesToPack: Build/Build.Content/NuGet/Entity.Abstractions.nuspec
+    packagesToPack: Build/Build.Content/NuGet/Extensions.nuspec
     versioningScheme: byBuildNumber
 
 - task: NuGetCommand@2
-  displayName: 'NuGet pack Entity.Hosting.nuspec'
+  displayName: 'NuGet pack Extensions.Configuration.nuspec'
   inputs:
     command: pack
-    packagesToPack: Build/Build.Content/NuGet/Entity.Hosting.nuspec
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Configuration.nuspec
     versioningScheme: byBuildNumber
 
 - task: NuGetCommand@2
-  displayName: 'NuGet pack Entity.Hosting.Server.nuspec'
+  displayName: 'NuGet pack Extensions.Drawing.nuspec'
   inputs:
     command: pack
-    packagesToPack: Build/Build.Content/NuGet/Entity.Hosting.Server.nuspec
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Drawing.nuspec
     versioningScheme: byBuildNumber
 
 - task: NuGetCommand@2
-  displayName: 'NuGet pack Entity.DataAccess.Core.nuspec'
+  displayName: 'NuGet pack Extensions.Net.nuspec'
   inputs:
     command: pack
-    packagesToPack: Build/Build.Content/NuGet/Entity.DataAccess.Core.nuspec
-    versioningScheme: byBuildNumber
-
-- task: NuGetCommand@2
-  displayName: 'NuGet pack Entity.Dto.nuspec'
-  inputs:
-    command: pack
-    packagesToPack: Build/Build.Content/NuGet/Entity.Dto.nuspec
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Net.nuspec
     versioningScheme: byBuildNumber
 
 - task: CopyFiles@2
@@ -126,4 +95,3 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
-
