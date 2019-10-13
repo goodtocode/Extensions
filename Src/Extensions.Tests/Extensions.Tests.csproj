@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Extensions.Configuration\Extensions.Configuration.csproj" />
-    <ProjectReference Include="..\Extensions.Data\Extensions.Data.csproj" />
     <ProjectReference Include="..\Extensions.Drawing\Extensions.Drawing.csproj" />
     <ProjectReference Include="..\Extensions.Net\Extensions.Net.csproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
