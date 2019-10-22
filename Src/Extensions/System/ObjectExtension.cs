@@ -67,10 +67,9 @@ namespace GoodToCode.Extensions
         /// <returns>Value, or passed notFoundValue if not found</returns>
         public static TValue GetAttributeValue<TAttribute, TValue>(this object item, TValue notFoundValue) where TAttribute : Attribute, IAttributeValue<TValue>
         {
-            TypeInfo itemType = item.GetType().GetTypeInfo();
             TValue returnValue = notFoundValue;
 
-            foreach (object attribute in itemType.GetCustomAttributes(false))
+            foreach (object attribute in item.GetType().GetCustomAttributes(false))
             {
                 if (attribute is TAttribute)
                 {
@@ -90,9 +89,7 @@ namespace GoodToCode.Extensions
         /// <returns></returns>
         public static IEnumerable<PropertyInfo> GetPropertiesByAttribute(this object item, Type myAttribute)
         {
-            TypeInfo itemType = item.GetType().GetTypeInfo();
-
-            var returnValue = itemType.DeclaredProperties.Where(
+            var returnValue = item.GetType().GetTypeInfo().DeclaredProperties.Where(
                 p => p.GetCustomAttributes(myAttribute, false).Any());
 
             return returnValue;
