@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GoodToCode.Extensions;
-using GoodToCode.Extensions.Serialization;
+﻿using GoodToCode.Extensions.Serialization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Runtime.Serialization;
 
@@ -10,9 +9,9 @@ namespace GoodToCode.Extensions.Test
     public class CustomerTests
     {
         // Test combination of DateTime Json formats, to ensure behavior is consistent
-        public const string Customer_HHMMSS = "{\"ActivityContextId\":-1,\"BirthDate\":\"1900-01-01T00:00:00\",\"CreatedDate\":\"1900-01-01T00:00:00\",\"CustomerTypeKey\":\"00000000-0000-0000-0000-000000000000\",\"FirstName\":\"i\",\"GenderId\":-1,\"Id\":-1,\"Key\":\"00000000-0000-0000-0000-000000000000\",\"LastName\":\"i\",\"MiddleName\":\"\",\"ModifiedDate\":\"1900-01-01T00:00:00\"}";
-        public const string Customer_HHMMSS0 = "{\"ActivityContextId\":-1,\"BirthDate\":\"1900-01-01T00:00:00.000\",\"CreatedDate\":\"1900-01-01T00:00:00.000\",\"CustomerTypeKey\":\"00000000-0000-0000-0000-000000000000\",\"FirstName\":\"i\",\"GenderId\":-1,\"Id\":-1,\"Key\":\"00000000-0000-0000-0000-000000000000\",\"LastName\":\"i\",\"MiddleName\":\"\",\"ModifiedDate\":\"1900-01-01T00:00:00.000\"}";
-        public const string Customer_HHMMSSf = "{\"ActivityContextId\":-1,\"BirthDate\":\"1923-04-01T01:02:03.004\",\"CreatedDate\":\"1923-04-01T01:02:03.004\",\"CustomerTypeKey\":\"00000000-0000-0000-0000-000000000000\",\"FirstName\":\"i\",\"GenderId\":-1,\"Id\":-1,\"Key\":\"00000000-0000-0000-0000-000000000000\",\"LastName\":\"i\",\"MiddleName\":\"\",\"ModifiedDate\":\"1923-04-01T01:02:03.004\"}";
+        public const string Customer_HHMMSS = "{\"BirthDate\":\"1900-01-01T00:00:00\",\"CreatedDate\":\"1900-01-01T00:00:00\",\"CustomerTypeKey\":\"00000000-0000-0000-0000-000000000000\",\"FirstName\":\"i\",\"GenderId\":-1,\"Id\":-1,\"Key\":\"00000000-0000-0000-0000-000000000000\",\"LastName\":\"i\",\"MiddleName\":\"\",\"ModifiedDate\":\"1900-01-01T00:00:00\"}";
+        public const string Customer_HHMMSS0 = "{\"BirthDate\":\"1900-01-01T00:00:00.000\",\"CreatedDate\":\"1900-01-01T00:00:00.000\",\"CustomerTypeKey\":\"00000000-0000-0000-0000-000000000000\",\"FirstName\":\"i\",\"GenderId\":-1,\"Id\":-1,\"Key\":\"00000000-0000-0000-0000-000000000000\",\"LastName\":\"i\",\"MiddleName\":\"\",\"ModifiedDate\":\"1900-01-01T00:00:00.000\"}";
+        public const string Customer_HHMMSSf = "{\"BirthDate\":\"1923-04-01T01:02:03.004\",\"CreatedDate\":\"1923-04-01T01:02:03.004\",\"CustomerTypeKey\":\"00000000-0000-0000-0000-000000000000\",\"FirstName\":\"i\",\"GenderId\":-1,\"Id\":-1,\"Key\":\"00000000-0000-0000-0000-000000000000\",\"LastName\":\"i\",\"MiddleName\":\"\",\"ModifiedDate\":\"1923-04-01T01:02:03.004\"}";
 
         [TestMethod()]
         public void Core_Entity_Customer_Class()
@@ -35,15 +34,12 @@ namespace GoodToCode.Extensions.Test
         {
             var searchChar = "i";
             var serializer = new JsonSerializer<Customer>();
-            var resultObject = new Customer();
-            var resultString = Defaults.String;
-            var zeroTime = Defaults.Date;
             var testMS = new DateTime(1983, 12, 9, 5, 10, 20, 3);
             var noMS = new DateTime(1983, 12, 9, 5, 10, 20, 000);
 
             // 1 digit millisecond
-            resultObject = new Customer() { FirstName = searchChar, LastName = searchChar, BirthDate = testMS, CreatedDate = testMS, ModifiedDate = testMS };
-            resultString = serializer.Serialize(resultObject);
+            var resultObject = new Customer() { FirstName = searchChar, LastName = searchChar, BirthDate = testMS, CreatedDate = testMS, ModifiedDate = testMS };
+            var resultString = serializer.Serialize(resultObject);
             Assert.IsTrue(resultString != Defaults.String);
             Assert.IsTrue(resultString.Contains(testMS.ToString(DateTimeExtension.Formats.ISO8601)));
             resultObject = serializer.Deserialize(resultString);

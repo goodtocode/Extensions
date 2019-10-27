@@ -24,11 +24,6 @@ namespace GoodToCode.Extensions.Test
         public virtual Guid Key { get; set; } = Defaults.Guid;
 
         /// <summary>
-        /// Activity history that created this record
-        /// </summary>
-        public virtual Guid ActivityContextKey { get; set; } = Defaults.Guid;
-
-        /// <summary>
         /// Date record was created
         /// </summary>
         public virtual DateTime CreatedDate { get; set; } = Defaults.Date;

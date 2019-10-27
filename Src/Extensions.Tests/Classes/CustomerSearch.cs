@@ -19,7 +19,6 @@ namespace GoodToCode.Extensions.Test
         public Guid CustomerTypeKey { get; set; } = Defaults.Guid;
         public DateTime CreatedDate { get; set; } = Defaults.Date;
         public DateTime ModifiedDate { get; set; } = Defaults.Date;
-        public int ActivityContextId { get; set; } = Defaults.Integer;
         public List<Customer> Results { get; set; } = new List<Customer>();
         public CustomerSearch()
                 : base()
