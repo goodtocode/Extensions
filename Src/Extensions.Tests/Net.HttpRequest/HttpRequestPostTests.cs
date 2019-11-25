@@ -53,28 +53,5 @@ namespace GoodToCode.Extensions.Test
                 request.Dispose();
             }
         }
-
-        [TestMethod()]
-        public async Task Core_Net_HttpRequestPost_CustomerSearch()
-        {
-            object dataOut = null;
-            var configuration = new ConfigurationManagerCore(ApplicationTypes.Native);
-            var custSearch = new Customer() { FirstName = "j", LastName = "g" };
-            var request = new HttpRequestPost<Customer, CustomerSearch>(new Uri(configuration.AppSettingValue("MyWebService") + "/CustomerSearch"), custSearch);
-            try
-            {
-                dataOut = await request.SendAsync();
-                Assert.IsTrue(request.Response.IsSuccessStatusCode);
-                throw new HttpRequestException();
-            }
-            catch (HttpRequestException ex)
-            {
-                Assert.IsTrue(dataOut != null || ex.Message.Contains("No such host") || ex.Message.Contains("no data"));
-            }
-            finally
-            {
-                request.Dispose();
-            }
-        }
     }
 }
