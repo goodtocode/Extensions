@@ -60,48 +60,6 @@
     <Content Include="GitHub\Extensions\contributing.md" />
     <Content Include="GitHub\Extensions\LICENSE" />
     <Content Include="GitHub\Extensions\README.md" />
-    <Content Include="Keys\GoodToCodeFramework.snk" />
-    <Content Include="Utility\GacUtil\gacutil.exe" />
-    <Content Include="Utility\MsTest\assemblies\Interop.UIAutomationClient.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.QualityTools.CodedUITestFramework.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.QualityTools.CodedUITestFramework.xml" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.QualityTools.LoadTestFramework.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.UITest.Common.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.UITest.Common.xml" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.UITest.Extension.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.UITest.Extension.xml" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.UITesting.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.UITesting.xml" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.WindowsStore.UITesting.dll" />
-    <Content Include="Utility\MsTest\assemblies\Microsoft.VisualStudio.TestTools.WindowsStore.UITesting.xml" />
-    <Content Include="Utility\MsTest\assemblies\UIAComWrapper.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.QualityTools.CodedUITestFramework.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.QualityTools.CodedUITestFramework.xml" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.QualityTools.LoadTestFramework.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.UITest.Common.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.UITest.Common.xml" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.UITest.Extension.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.UITest.Extension.xml" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.UITesting.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.UITesting.xml" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.WindowsStore.UITesting.dll" />
-    <Content Include="Utility\MsTest\Microsoft.VisualStudio.TestTools.WindowsStore.UITesting.xml" />
-    <Content Include="Utility\MsTest\MSTest.exe" />
-    <Content Include="Utility\NuGet\nuget.exe" />
-    <Content Include="Utility\SNK\sn.exe" />
-    <Content Include="Utility\SNK\SNK Instructions.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dashboard\Links-GoodToCode-Framework.md" />
-    <Content Include="Utility\GacUtil\gacutil.exe.config" />
-    <Content Include="Utility\MsTest\MSTest.exe.config" />
-    <Content Include="Utility\NuGet\NuGetCacheClear.bat" />
-    <Content Include="Utility\SNK\sn.exe.config" />
-    <Content Include="Utility\SNK\SNKCreate-RunManually.bat" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
