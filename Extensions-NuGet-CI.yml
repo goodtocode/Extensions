@@ -65,6 +65,13 @@ steps:
     versioningScheme: byBuildNumber
 
 - task: NuGetCommand@2
+  displayName: 'NuGet pack Extensions.AspNetCore.nuspec'
+  inputs:
+    command: pack
+    packagesToPack: Build/Build.Content/NuGet/Extensions.AspNetCore.nuspec
+    versioningScheme: byBuildNumber
+
+- task: NuGetCommand@2
   displayName: 'NuGet pack Extensions.Configuration.nuspec'
   inputs:
     command: pack
@@ -79,10 +86,38 @@ steps:
     versioningScheme: byBuildNumber
 
 - task: NuGetCommand@2
+  displayName: 'NuGet pack Extensions.Mathematics.nuspec'
+  inputs:
+    command: pack
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Mathematics.nuspec
+    versioningScheme: byBuildNumber
+
+- task: NuGetCommand@2
   displayName: 'NuGet pack Extensions.Net.nuspec'
   inputs:
     command: pack
     packagesToPack: Build/Build.Content/NuGet/Extensions.Net.nuspec
+    versioningScheme: byBuildNumber
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack Extensions.Security.nuspec'
+  inputs:
+    command: pack
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Security.nuspec
+    versioningScheme: byBuildNumber
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack Extensions.Serialization.nuspec'
+  inputs:
+    command: pack
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Serialization.nuspec
+    versioningScheme: byBuildNumber
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack Extensions.Text.nuspec'
+  inputs:
+    command: pack
+    packagesToPack: Build/Build.Content/NuGet/Extensions.Text.nuspec
     versioningScheme: byBuildNumber
 
 - task: CopyFiles@2
