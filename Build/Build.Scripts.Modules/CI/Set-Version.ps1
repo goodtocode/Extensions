@@ -14,7 +14,7 @@ param
 (
 	[Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]
     [string] $Path= $(throw '-Path is a required parameter. $(Build.SourcesDirectory)'),
-	[Version] $Version= "4.19"
+	[Version] $Version= "5.20"
 )
 
 # ***
@@ -46,7 +46,7 @@ $Path = Set-Unc -Path $Path
 # *** Execute
 # ***
 $Year = get-date –format yy
-[String]$VersionToReplace = "4.19.01"
+[String]$VersionToReplace = "5.20.01"
 [String]$Major = $Version.Major.ToString()
 [String]$Minor = $Version.Minor.ToString()
 [String]$Revision = $Version.Revision.ToString()

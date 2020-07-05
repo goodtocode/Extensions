@@ -259,7 +259,7 @@ function Set-Version
 	# Vsix Templates
 	$OldVersion = Get-Version -Major $Major -Minor ($Now.Month - 1).ToString("00") -Format 'M.YY.MM'
 	$Version = Get-Version -Major $Major -Format 'M.YY.MM.HHH'
-	Update-Text -Path $Path -Old '4.19.01' -New $Version -Include *.vsixmanifest
+	Update-Text -Path $Path -Old '5.20.01' -New $Version -Include *.vsixmanifest
 	# No NuGet Version Needed - handled by that individual process
 }
 export-modulemember -function Set-Version
