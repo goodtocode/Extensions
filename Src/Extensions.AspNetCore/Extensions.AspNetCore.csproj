@@ -8,7 +8,7 @@
     <RootNamespace>GoodToCode.Extensions.Net</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Net.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.AspNetCore.xml</DocumentationFile>
     <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
