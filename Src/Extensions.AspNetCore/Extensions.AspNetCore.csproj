@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
-    <AssemblyName>GoodToCode.Extensions.Net</AssemblyName>
+    <AssemblyName>GoodToCode.Extensions.AspNetCore</AssemblyName>
     <RootNamespace>GoodToCode.Extensions.Net</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
