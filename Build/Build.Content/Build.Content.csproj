@@ -77,7 +77,19 @@
     <Content Include="NuGet\Extensions.Drawing.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NuGet\Extensions.Data.nuspec" />
+    <Content Include="NuGet\Extensions.AspNetCore.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet\Extensions.Mathematics.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet\Extensions.Security.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet\Extensions.Serialization.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet\Extensions.Text.nuspec" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

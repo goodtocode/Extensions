@@ -156,7 +156,7 @@ Rancho Santa Margarita, CA 92688
 +1 949.544.1900
 <br />
 
-[goodtocode.com](http://www.goodtocode.com) | [@GoodToCode](http://www.twitter.com/GoodToCode)
+[goodtocode.com](https://github.com/goodtocode) | [@GoodToCode](http://www.twitter.com/GoodToCode)
 
 
 </div>
