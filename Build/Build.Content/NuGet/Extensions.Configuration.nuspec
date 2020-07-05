@@ -31,9 +31,9 @@
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.dll" target="lib\netcoreapp3.1" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.xml" target="lib\netcoreapp3.1" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.pdb" target="lib\netcoreapp3.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.dll" target="lib\netcoreapp2.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.xml" target="lib\netcoreapp2.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.pdb" target="lib\netcoreapp2.1" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.dll" target="lib\netcoreapp2.2" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.xml" target="lib\netcoreapp2.2" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.pdb" target="lib\netcoreapp2.2" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.dll" target="lib\netcoreapp2.0" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.xml" target="lib\netcoreapp2.0" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Configuration.pdb" target="lib\netcoreapp2.0" />

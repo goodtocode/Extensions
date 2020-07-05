@@ -32,9 +32,9 @@
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.dll" target="lib\netcoreapp3.1" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.xml" target="lib\netcoreapp3.1" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.pdb" target="lib\netcoreapp3.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.dll" target="lib\netcoreapp2.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.xml" target="lib\netcoreapp2.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.pdb" target="lib\netcoreapp2.1" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.dll" target="lib\netcoreapp2.2" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.xml" target="lib\netcoreapp2.2" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.pdb" target="lib\netcoreapp2.2" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.dll" target="lib\netcoreapp2.0" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.xml" target="lib\netcoreapp2.0" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Security.pdb" target="lib\netcoreapp2.0" />

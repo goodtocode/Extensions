@@ -31,9 +31,9 @@
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.dll" target="lib\netcoreapp3.1" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.xml" target="lib\netcoreapp3.1" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.pdb" target="lib\netcoreapp3.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.dll" target="lib\netcoreapp2.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.xml" target="lib\netcoreapp2.1" />
-    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.pdb" target="lib\netcoreapp2.1" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.dll" target="lib\netcoreapp2.2" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.xml" target="lib\netcoreapp2.2" />
+    <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.pdb" target="lib\netcoreapp2.2" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.dll" target="lib\netcoreapp2.0" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.xml" target="lib\netcoreapp2.0" />
     <file src="\lib\GoodToCode-Extensions\GoodToCode.Extensions.Serialization.pdb" target="lib\netcoreapp2.0" />
