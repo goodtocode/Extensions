@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("GoodToCode")]
 [assembly: AssemblyProduct("GoodToCode")]
 [assembly: AssemblyCopyright("Copyright © 2017-2020 GoodToCode. All rights reserved.")]
-[assembly: AssemblyTrademark("GoodToCode is a registered trademark of GoodToCode. GoodToCode Framework and GoodToCode Cloud Dev Environment are trademarks of GoodToCode.")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
