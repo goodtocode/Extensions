@@ -10,7 +10,7 @@
     <RootNamespace>GoodToCode.Extensions</RootNamespace>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
-    <Version>4.18.9</Version>
+    <Version>5.20.07</Version>
     <Authors>GoodToCode</Authors>
     <Company>GoodToCode</Company>
     <Product>GoodToCode .NET Extensions Tests for Core, Universal (UWP), Xamarin Forms and Portable Class Libraries (PCL).</Product>

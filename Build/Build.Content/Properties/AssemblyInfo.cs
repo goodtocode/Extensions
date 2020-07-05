@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GoodToCode")]
 [assembly: AssemblyProduct("GoodToCode")]
-[assembly: AssemblyCopyright("Copyright © 2018 GoodToCode. All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright © 2017-2020 GoodToCode. All rights reserved.")]
 [assembly: AssemblyTrademark("GoodToCode is a registered trademark of GoodToCode. GoodToCode Framework and GoodToCode Cloud Dev Environment are trademarks of GoodToCode.")]
 [assembly: AssemblyCulture("")]
 
