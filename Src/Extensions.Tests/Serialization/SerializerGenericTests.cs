@@ -15,14 +15,14 @@ namespace GoodToCode.Extensions.Test
         public void Core_Serialization_SerializerGeneric_ValueTypes()
         {
             // Immutable string class
-            var data1 = Defaults.String;
+            var data1 = string.Empty;
             var Testdata1 = "TestDataHere";
             ISerializer<object> Serialzer1 = new JsonSerializer<object>();
             data1 = Serialzer1.Serialize(Testdata1);
             Assert.IsTrue(Serialzer1.Deserialize(data1).ToString() == Testdata1);
 
             
-            var data = Defaults.String;
+            var data = string.Empty;
             StringMutable TestData = "TestDataHere";
             var Serialzer = new JsonSerializer<StringMutable>();
             data = Serialzer.Serialize(TestData);

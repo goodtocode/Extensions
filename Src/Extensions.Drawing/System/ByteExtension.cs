@@ -40,7 +40,7 @@ namespace GoodToCode.Extensions
         /// <returns>True if the byte array is an image</returns>
         public static bool IsImage(this byte[] item, int maxSizeInKb = 4096)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
             Image testImage;
 
             try

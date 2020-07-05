@@ -10,7 +10,7 @@ namespace GoodToCode.Extensions.IO
 
     public class FileReader
     {
-        private readonly string file = Defaults.String; 
+        private readonly string file = string.Empty; 
         /// <summary>
         /// Constructor
         /// </summary>
@@ -31,7 +31,7 @@ namespace GoodToCode.Extensions.IO
         /// </summary>
         public string ReadToEnd()
         {
-            var returnValue = Defaults.String;
+            var returnValue = string.Empty;
             using (var streamReader = new StreamReader(file, Encoding.UTF8))
             {
                 returnValue = streamReader.ReadToEnd();

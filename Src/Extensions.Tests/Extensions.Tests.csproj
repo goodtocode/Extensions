@@ -45,9 +45,15 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Extensions.AspNetCore\Extensions.AspNetCore.csproj" />
     <ProjectReference Include="..\Extensions.Configuration\Extensions.Configuration.csproj" />
     <ProjectReference Include="..\Extensions.Drawing\Extensions.Drawing.csproj" />
+    <ProjectReference Include="..\Extensions.Mathematics\Extensions.Mathematics.csproj" />
+    <ProjectReference Include="..\Extensions.Net\Extensions.AspNetCore.csproj" />
     <ProjectReference Include="..\Extensions.Net\Extensions.Net.csproj" />
+    <ProjectReference Include="..\Extensions.Security\Extensions.Security.csproj" />
+    <ProjectReference Include="..\Extensions.Serialization\Extensions.Serialization.csproj" />
+    <ProjectReference Include="..\Extensions.Text\Extensions.Text.csproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
   </ItemGroup>
   <ItemGroup>

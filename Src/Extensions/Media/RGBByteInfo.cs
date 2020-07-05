@@ -11,19 +11,19 @@ namespace GoodToCode.Extensions.Media
         /// <summary>
         /// Alpha channel (transparency)
         /// </summary>
-        public byte Alpha { get; set; } = Defaults.Byte;
+        public byte Alpha { get; set; } = 0;
         /// <summary>
         /// Blue channel
         /// </summary>
-        public byte Blue { get; set; } = Defaults.Byte;
+        public byte Blue { get; set; } = 0;
         /// <summary>
         /// Green channel
         /// </summary>
-        public byte Green { get; set; } = Defaults.Byte;
+        public byte Green { get; set; } = 0;
         /// <summary>
         /// Red channel
         /// </summary>
-        public byte Red { get; set; } = Defaults.Byte;
+        public byte Red { get; set; } = 0;
         
         /// <summary>
         /// Converts RGB to Hex #RRGGBB

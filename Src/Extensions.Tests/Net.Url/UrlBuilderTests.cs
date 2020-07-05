@@ -9,7 +9,7 @@ namespace GoodToCode.Extensions.Test
     [TestClass()]
     public class UrlBuilderTests
     {
-        public Uri LocalhostWithPortAsUri { get; set; } = Defaults.Uri;
+        public Uri LocalhostWithPortAsUri { get; set; } = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
         public string LocalhostWithPortAsString { get; set; } = "http://localhost:80";
         public List<string> ParameterList = new List<string>() { "param1", "param2", "param3" };
         public KeyValueListString QuerystringList = new KeyValueListString() { { "key1", "param1" }, { "key2", "param2" }, { "key3", "param3" } };

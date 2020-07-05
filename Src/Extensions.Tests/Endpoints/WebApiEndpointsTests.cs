@@ -69,7 +69,7 @@ namespace GoodToCode.Extensions.Test
         {
             var urlCustomer = new ConfigurationManagerCore(ApplicationTypes.Native).AppSettingValue("MyWebService").AddLast("/Customer");
             await this.Endpoints_Framework_WebAPI_CustomerPut();
-            var keyToGet = (Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid).ToString();
+            var keyToGet = (Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Guid.Empty).ToString();
             var request = new HttpRequestGet<Customer>(urlCustomer.AddLast("/") + keyToGet.ToString());
 
             try
@@ -119,7 +119,7 @@ namespace GoodToCode.Extensions.Test
             var urlCustomer = new ConfigurationManagerCore(ApplicationTypes.Native).AppSettingValue("MyWebService").AddLast("/Customer");
 
             await this.Endpoints_Framework_WebAPI_CustomerPut();
-            var keyToGet = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid;
+            var keyToGet = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Guid.Empty;
 
             try
             {
@@ -153,7 +153,7 @@ namespace GoodToCode.Extensions.Test
             try
             {
                 await this.Endpoints_Framework_WebAPI_CustomerPut();
-                var keyToDelete = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Defaults.Guid;
+                var keyToDelete = Endpoints_Framework_for_WebApi.RecycleBin.Count() > 0 ? Endpoints_Framework_for_WebApi.RecycleBin[0] : Guid.Empty;
 
                 var requestDelete = new HttpRequestDelete(urlCustomer.AddLast("/") + keyToDelete.ToString());
                 await requestDelete.SendAsync();

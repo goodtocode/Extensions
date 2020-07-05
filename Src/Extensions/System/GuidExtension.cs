@@ -23,7 +23,7 @@ namespace GoodToCode.Extensions
             }
             catch
             {
-                returnValue = Defaults.Integer;
+                returnValue = -1;
             }
             return returnValue;
         }
@@ -39,7 +39,7 @@ namespace GoodToCode.Extensions
         public static string ToReadable(this Guid item, string replaceWith = "")
         {
             var returnValue = item.ToString();
-            returnValue = item == Defaults.Guid ? replaceWith : returnValue;
+            returnValue = item == Guid.Empty ? replaceWith : returnValue;
             return returnValue;
         }
     }

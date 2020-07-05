@@ -14,13 +14,13 @@ namespace GoodToCode.Extensions.Test
         public void Core_Configuration_ConfigurationManagerCore_AppSettings()
         {
             // Specific config entries
-            var itemToTestString = Defaults.String;
+            var itemToTestString = string.Empty;
             var itemToTest = new AppSettingSafe();
             var configuration = new ConfigurationManagerCore(ApplicationTypes.Native);
             itemToTest = configuration.AppSetting("TestAppSetting");
-            Assert.IsTrue(itemToTest.Value != Defaults.String);
+            Assert.IsTrue(itemToTest.Value != string.Empty);
             itemToTestString = configuration.AppSettings.GetValue("TestAppSetting");
-            Assert.IsTrue(itemToTestString != Defaults.String);
+            Assert.IsTrue(itemToTestString != string.Empty);
         }
 
         /// <summary>
@@ -37,27 +37,27 @@ namespace GoodToCode.Extensions.Test
             Assert.IsTrue(itemToTest.IsValid == false);
             // ADO
             itemToTest = configuration.ConnectionString("Example-SQLServer");
-            Assert.IsTrue(itemToTest.ToString("EF") != Defaults.String);
+            Assert.IsTrue(itemToTest.ToString("EF") != string.Empty);
             Assert.IsTrue(itemToTest.IsADO);
             Assert.IsTrue(itemToTest.IsEF == false);
             Assert.IsTrue(itemToTest.IsValid);
             Assert.IsTrue(itemToTest.ConnectionStringType == ConnectionStringSafe.ConnectionStringTypes.ADO);
-            Assert.IsTrue(itemToTest.ToEF(this.GetType()) != Defaults.String);
+            Assert.IsTrue(itemToTest.ToEF(this.GetType()) != string.Empty);
             // EF
             itemToTest = configuration.ConnectionString("Example-EDMX");
-            Assert.IsTrue(itemToTest.ToString("ADO") != Defaults.String);
+            Assert.IsTrue(itemToTest.ToString("ADO") != string.Empty);
             Assert.IsTrue(itemToTest.IsEF);
             Assert.IsTrue(itemToTest.IsADO == false);
             Assert.IsTrue(itemToTest.IsValid);
             Assert.IsTrue(itemToTest.ConnectionStringType == ConnectionStringSafe.ConnectionStringTypes.EF);
-            Assert.IsTrue(itemToTest.ToEF(this.GetType()) != Defaults.String);
+            Assert.IsTrue(itemToTest.ToEF(this.GetType()) != string.Empty);
             // Specific config entries
             var connectionToTest = new ConnectionStringSafe();
             connectionToTest = configuration.ConnectionString("Example-EDMX");
-            Assert.IsTrue(connectionToTest.Value != Defaults.String);
+            Assert.IsTrue(connectionToTest.Value != string.Empty);
             Assert.IsTrue(connectionToTest.IsEF);
             connectionToTest = configuration.ConnectionString("Example-SQLServer");
-            Assert.IsTrue(connectionToTest.Value != Defaults.String);
+            Assert.IsTrue(connectionToTest.Value != string.Empty);
             Assert.IsTrue(connectionToTest.IsADO);
         }
     }

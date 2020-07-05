@@ -51,7 +51,7 @@ namespace GoodToCode.Extensions.Test
             ListSafe<string> kvList = new ListSafe<string>();
             kvList.Add("TestKey1");
             kvList.Add("TestKey2");
-            Assert.IsTrue(kvList.GetValue("TestKey2") != Defaults.String);
+            Assert.IsTrue(kvList.GetValue("TestKey2") != string.Empty);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace GoodToCode.Extensions
         /// <returns>Cased string</returns>
         private static string FormatCasePascal(string uncasedString, string parseCharacter, bool useExistingCase = true)
         {
-            var returnValue = Defaults.String;
+            var returnValue = string.Empty;
             string[] words = uncasedString.Split(parseCharacter.ToCharArray());
             int count;
             for (count = 0; count <= words.Length - 1; count++)
@@ -96,7 +96,7 @@ namespace GoodToCode.Extensions
         /// <returns>Cased item based on the exception casing rules</returns>
         private static string FormatCaseException(string uncasedString, string parseCharacter)
         {
-            var returnValue = Defaults.String;
+            var returnValue = string.Empty;
             string[] words = uncasedString.Split(parseCharacter.ToCharArray());
             int count;
             for (count = 0; count <= words.Length - 1; count++)
@@ -133,7 +133,7 @@ namespace GoodToCode.Extensions
         /// <returns>True if this is all upper case.</returns>
         public static bool IsCaseUpper(this string item)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
 
             if (item == item.ToUpperInvariant())
             {
@@ -150,7 +150,7 @@ namespace GoodToCode.Extensions
         /// <returns>True if this is all lower case.</returns>
         public static bool IsCaseLower(this string item)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
 
             if (item == item.ToLowerInvariant())
             {
@@ -178,7 +178,7 @@ namespace GoodToCode.Extensions
         /// <returns>True if this is an email address (or if empty.)</returns>
         public static bool IsEmail(this string item, bool emptyStringOK = true)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
 
             item = item.Trim();
             if ((emptyStringOK == true & item.Length == 0))
@@ -206,7 +206,7 @@ namespace GoodToCode.Extensions
         /// <returns>True/False if found characters in position</returns>
         public static bool IsFirst(this string item, string firstCharacters)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
 
             if (item.Length >= firstCharacters.Length)
             {
@@ -226,9 +226,9 @@ namespace GoodToCode.Extensions
         /// <returns>True if this is an integer.</returns>
         public static bool IsInteger(this string item)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
 
-            if (item.TryParseInt64() != Defaults.Integer)
+            if (item.TryParseInt64() != -1)
             {
                 returnValue = true;
             }
@@ -244,7 +244,7 @@ namespace GoodToCode.Extensions
         /// <returns>True/False if found characters in position</returns>
         public static bool IsLast(this string item, string lastCharacters)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
 
             if (item.Length >= lastCharacters.Length)
             {
@@ -302,11 +302,11 @@ namespace GoodToCode.Extensions
         public static bool TryParseBoolean(this string item, bool notFoundValue = false)
         {
             var returnValue = notFoundValue;
-            var convertValue = Defaults.Boolean;
+            var convertValue = false;
 
             if (String.IsNullOrEmpty(item) == false)
             {                
-                if (item.TryParseInt16() != Defaults.Int16) // Catch integers, as TryParse only evaluates "true" and "false", not "0".
+                if (item.TryParseInt16() != -1) // Catch integers, as TryParse only evaluates "true" and "false", not "0".
                 {
                     returnValue = item.TryParseInt16() == 0 ? false : true;
                 }
@@ -414,7 +414,7 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static decimal TryParseDecimal(this string item, decimal notFoundValue = 0m)
         {
-            var returnValue = Defaults.Decimal;
+            var returnValue = 0m;
             if (String.IsNullOrEmpty(item) == false)
             {
                 if (Decimal.TryParse(item, out decimal convertValue))
@@ -434,8 +434,8 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static double TryParseDouble(this string item, double notFoundValue = 0.0)
         {
-            var returnValue = Defaults.Double;
-            var convertValue = Defaults.Double;
+            var returnValue = 0.0;
+            var convertValue = 0.0;
 
             if (String.IsNullOrEmpty(item) == false)
             {
@@ -484,9 +484,9 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value (01/01/1900) of the source item</returns>
         public static DateTime TryParseDateTime(this string item)
         {
-            var notFoundValue = Defaults.Date;
-            var returnValue = Defaults.Date;
-            var convertDate = Defaults.Date;
+            var notFoundValue = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
+            var returnValue = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
+            var convertDate = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
 
             item = item.Trim();
             if (item.IsInteger() == true & item.Length == 8)
@@ -514,9 +514,9 @@ namespace GoodToCode.Extensions
         /// <returns>Converted or not found value of the source item</returns>
         public static DateTime TryParseTime(this string item)
         {
-            var notFoundValue = Defaults.Date;
-            var returnValue = Defaults.Date;
-            var convertDate = Defaults.Date;
+            var notFoundValue = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
+            var returnValue = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
+            var convertDate = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
 
             item = item.Trim();
             if ((String.IsNullOrEmpty(item) == false))
@@ -538,7 +538,7 @@ namespace GoodToCode.Extensions
         /// Failure returns http://localhost:80, value of Default.Uri</returns>
         public static Uri TryParseUri(this string item)
         {
-            var returnValue = Defaults.Uri;
+            var returnValue = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
 
             if (String.IsNullOrEmpty(item) == false)
             {
@@ -548,7 +548,7 @@ namespace GoodToCode.Extensions
                 }
                 catch
                 {
-                    returnValue = Defaults.Uri;
+                    returnValue = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
                 }
             }
 
@@ -586,7 +586,7 @@ namespace GoodToCode.Extensions
        /// <returns>Extracted characters, or original string if cant substring.</returns>
         public static string SubstringSafe(this string item, int starting, int length = -1)
         {
-            var returnValue = Defaults.String;
+            var returnValue = string.Empty;
             var itemLength = item.Length;
 
             if (length == -1) length = itemLength - starting;
@@ -630,8 +630,8 @@ namespace GoodToCode.Extensions
         /// <returns>Cased string</returns>
         public static string ToPascalCase(this string uncasedString)
         {
-            var returnValue = Defaults.String;
-            var partiallyCased = Defaults.String;
+            var returnValue = string.Empty;
+            var partiallyCased = string.Empty;
 
             // Do nothing if nothing to work with
             if (string.IsNullOrEmpty(uncasedString) == false & ((uncasedString.ToLowerInvariant() == uncasedString) | (uncasedString.ToUpperInvariant() == uncasedString) & uncasedString.Contains(" ")))

@@ -19,11 +19,11 @@ namespace GoodToCode.Extensions.Test
             var searchChar = "i";
             var originalObject = new CustomerSearch() { FirstName = searchChar, LastName = searchChar };
             var resultObject = new CustomerSearch();
-            var resultString = Defaults.String;
+            var resultString = string.Empty;
             var serializer = new JsonSerializer<CustomerSearch>();
 
             resultString = serializer.Serialize(originalObject);
-            Assert.IsTrue(resultString != Defaults.String);
+            Assert.IsTrue(resultString != string.Empty);
             resultObject = serializer.Deserialize(resultString);
             Assert.IsTrue(resultObject.FirstName == searchChar);
             Assert.IsTrue(resultObject.LastName == searchChar);
@@ -33,7 +33,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Entity_CustomerSearch_Json()
         {
             var resultObject = new CustomerSearch();
-            var resultString = Defaults.String;
+            var resultString = string.Empty;
             var serializer = new JsonSerializer<CustomerSearch>();
 
             //

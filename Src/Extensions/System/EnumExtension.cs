@@ -83,7 +83,7 @@ namespace GoodToCode.Extensions
         public static bool Contains<T>(this Enum item, T itemToCheck)
         {
             Type myType = item.GetType();
-            bool returnValue = Defaults.Boolean;
+            bool returnValue = false;
             ValueParser itemParsed = new ValueParser(itemToCheck, myType);
 
             if (itemParsed.Signed is long)

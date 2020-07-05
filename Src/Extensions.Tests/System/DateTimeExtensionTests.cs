@@ -10,7 +10,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_DateTime_ISO8601_FormatStrings()
         {
             DateTime defaultDateValue = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
-            DateTime defaultShort = Defaults.Date;
+            DateTime defaultShort = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
             Assert.IsTrue(defaultDateValue.Ticks == defaultShort.Ticks);
             Assert.IsTrue(defaultDateValue.ToString() == defaultShort.ToString());
 

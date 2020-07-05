@@ -68,7 +68,7 @@ namespace GoodToCode.Extensions
         public static string ToReadable(this decimal item, string replaceWith = "")
         {
             var returnValue = item.ToString();
-            returnValue = item == Defaults.Decimal ? replaceWith : returnValue;
+            returnValue = item == 0m ? replaceWith : returnValue;
             return returnValue;
         }
     }

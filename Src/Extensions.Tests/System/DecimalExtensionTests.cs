@@ -9,7 +9,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Decimal_ToDouble()
         {
             decimal original = 10.00M;
-            double castedValue = Defaults.Double;
+            double castedValue = 0.0;
             castedValue = original.ToDouble();
             Assert.IsTrue(castedValue == (double)original);
         }
@@ -18,7 +18,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Decimal_ToInt()
         {
             decimal original = 10.00M;
-            var castedValue = Defaults.Integer;
+            var castedValue = -1;
             castedValue = original.ToInt();
             Assert.IsTrue(castedValue == (int)original);
         }
@@ -27,7 +27,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Decimal_ToShort()
         {
             decimal original = 10.00M;
-            short castedValue = Defaults.Short;
+            short castedValue = -1;
             castedValue = original.ToShort();
             Assert.IsTrue(castedValue == (short)original);
         }
@@ -36,7 +36,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Decimal_ToLong()
         {
             decimal original = 10.00M;
-            long castedValue = Defaults.Long;
+            long castedValue = -1;
             castedValue = original.ToLong();
             Assert.IsTrue(castedValue == (long)original);
         }

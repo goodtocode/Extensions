@@ -8,8 +8,8 @@ namespace GoodToCode.Extensions.Test
     /// </summary>
     public class PersonInfo
     {
-        public string FirstName { get; set; } = Defaults.String;
-        public string LastName { get; set; } = Defaults.String;
-        public DateTime BirthDate { get; set; } = Defaults.Date;
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public DateTime BirthDate { get; set; } = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
     }
 }

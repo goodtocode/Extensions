@@ -112,12 +112,12 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// Full path to the App_Data folder, or the current OS equivilent
         /// </summary>
-        public string CurrentPath { get; } = Defaults.String;
+        public string CurrentPath { get; } = string.Empty;
 
         /// <summary>
         /// Full path to the App_Data folder, or the current OS equivilent
         /// </summary>
-        public string RootPath { get; set; } = Defaults.String;
+        public string RootPath { get; set; } = string.Empty;
 
         /// <summary>
         /// Full path to the App_Data folder, or the current OS equivilent
@@ -137,7 +137,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// ThrowException
         /// </summary>
-        public bool ThrowException { get; set; } = Defaults.Boolean;
+        public bool ThrowException { get; set; } = false;
 
         /// <summary>
         /// Constructor
@@ -221,7 +221,7 @@ namespace GoodToCode.Extensions.Configuration
         {
             AppSettingSafe ReturnData = AppSettings.Find(x => x.Key == key).CastSafe<AppSettingSafe>();
 
-            if (ThrowException && ReturnData.Value == Defaults.String)
+            if (ThrowException && ReturnData.Value == string.Empty)
             {
                 throw new System.DataMisalignedException(String.Format("App Setting is missing or has an empty value. ({0})", key));
             }
@@ -248,7 +248,7 @@ namespace GoodToCode.Extensions.Configuration
         {
             ConnectionStringSafe ReturnData = ConnectionStrings.Find(x => x.Key == key).CastSafe<ConnectionStringSafe>();
 
-            if (ThrowException && ReturnData.Value == Defaults.String)
+            if (ThrowException && ReturnData.Value == string.Empty)
             {
                 throw new System.DataMisalignedException(String.Format("Connection string is missing or has an empty value. ({0})", key));
             }

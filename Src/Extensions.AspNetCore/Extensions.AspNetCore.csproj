@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyName>GoodToCode.Extensions.Net</AssemblyName>
+    <RootNamespace>GoodToCode.Extensions.Net</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Net.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extensions.Configuration\Extensions.Configuration.csproj" />
+    <ProjectReference Include="..\Extensions\Extensions.csproj" />
+  </ItemGroup>
+
+</Project>

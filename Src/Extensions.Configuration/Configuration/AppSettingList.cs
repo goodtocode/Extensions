@@ -22,7 +22,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// File that contains these configurations
         /// </summary>
-        public string ConfigFile { get; private set; } = Defaults.String;
+        public string ConfigFile { get; private set; } = string.Empty;
 
         /// <summary>
         /// Name of the Xml node element
@@ -47,17 +47,17 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// Status message
         /// </summary>
-        public string StatusMessage { get; set; } = Defaults.String;
+        public string StatusMessage { get; set; } = string.Empty;
 
         /// <summary>
         /// Setting to allow duplicates
         /// </summary>
-        public bool AllowDuplicates { get; set; } = Defaults.Boolean;
+        public bool AllowDuplicates { get; set; } = false;
 
         /// <summary>
         /// Setting to throw exception if rules are broken
         /// </summary>
-        public bool ThrowException { get; set; } = Defaults.Boolean;
+        public bool ThrowException { get; set; } = false;
         
         /// <summary>
         /// Constructor
@@ -122,7 +122,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <remarks></remarks>
         public string GetValue(string key)
         {
-            var returnValue = Defaults.String;
+            var returnValue = string.Empty;
             returnValue = this.FindSafe(x => x.Key == key).Value;
             return returnValue;
         }
@@ -135,7 +135,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <remarks></remarks>
         public int FindIndex(string key)
         {
-            var returnValue = Defaults.Integer;
+            var returnValue = -1;
             for (var count = 0; count < this.Count - 1; count++)
             {
                 if (this[count].Key == key)
@@ -169,7 +169,7 @@ namespace GoodToCode.Extensions.Configuration
         public void Add(string key, string value)
         {
             // Self-normalize based on AllowDuplicates and ThrowException
-            if (AllowDuplicates == false == false && this.GetValue(key) != Defaults.String)
+            if (AllowDuplicates == false == false && this.GetValue(key) != string.Empty)
             {
                 RemoveAt(FindIndex(key));
             }
@@ -183,7 +183,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <remarks></remarks>
         public void Remove(string key)
         {
-            if (this.GetValue(key).ToStringSafe() != Defaults.String)
+            if (this.GetValue(key).ToStringSafe() != string.Empty)
                 RemoveAt(FindIndex(key));
         }
     }

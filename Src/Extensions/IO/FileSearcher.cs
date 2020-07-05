@@ -24,11 +24,11 @@ namespace GoodToCode.Extensions.IO
         /// <summary>
         /// FileNameOrMask
         /// </summary>
-        public string FileNameOrMask { get; private set; } = Defaults.String;
+        public string FileNameOrMask { get; private set; } = string.Empty;
         /// <summary>
         /// ParentLevels
         /// </summary>
-        public int ParentLevels { get; private set; } = Defaults.Integer;
+        public int ParentLevels { get; private set; } = -1;
         
         /// <summary>
         /// Constructor

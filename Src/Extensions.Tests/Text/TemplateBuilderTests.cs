@@ -11,7 +11,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Text_TemplateBuilder_ToString()
         {
             var template = "1: {0}, 2: {1}, 3: {2}";
-            var result = Defaults.String;
+            var result = string.Empty;
             var data = new List<string>() { "FirstItem", "SecondItem", "ThirdItem" };
             var builder = new TemplateBuilder(template, data);
             result = builder.ToString();

@@ -20,15 +20,15 @@ namespace GoodToCode.Extensions.Test
 
             // ADO
             itemToTest = configuration.ConnectionString("Example-SQLServer");
-            Assert.IsTrue(itemToTest.Value != Defaults.String);
+            Assert.IsTrue(itemToTest.Value != string.Empty);
             itemToTest.EDMXFileName = "TestEDMXFile";
-            Assert.IsTrue(itemToTest.ToString("EF") != Defaults.String);
-            Assert.IsTrue(itemToTest.ToEF(this.GetType()) != Defaults.String);
+            Assert.IsTrue(itemToTest.ToString("EF") != string.Empty);
+            Assert.IsTrue(itemToTest.ToEF(this.GetType()) != string.Empty);
             // EF
             itemToTest = configuration.ConnectionString("Example-EDMX");
-            Assert.IsTrue(itemToTest.Value != Defaults.String);
-            Assert.IsTrue(itemToTest.ToString("ADO") != Defaults.String);
-            Assert.IsTrue(itemToTest.ToADO() != Defaults.String);
+            Assert.IsTrue(itemToTest.Value != string.Empty);
+            Assert.IsTrue(itemToTest.ToString("ADO") != string.Empty);
+            Assert.IsTrue(itemToTest.ToADO() != string.Empty);
         }
     }
 }

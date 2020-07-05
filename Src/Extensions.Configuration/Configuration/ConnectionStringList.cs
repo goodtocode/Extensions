@@ -31,7 +31,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// File that contains these configurations
         /// </summary>
-        public string ConfigFile { get; private set; } = Defaults.String;
+        public string ConfigFile { get; private set; } = string.Empty;
         /// <summary>
         /// Raw XML document
         /// </summary>
@@ -39,15 +39,15 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// StatusMessage
         /// </summary>
-        public string StatusMessage { get; set; } = Defaults.String;
+        public string StatusMessage { get; set; } = string.Empty;
         /// <summary>
         ///      AllowDuplicates
         /// </summary>
-        public bool AllowDuplicates { get; set; } = Defaults.Boolean;
+        public bool AllowDuplicates { get; set; } = false;
         /// <summary>
         /// ThrowException
         /// </summary>
-        public bool ThrowException { get; set; } = Defaults.Boolean;
+        public bool ThrowException { get; set; } = false;
         
         /// <summary>
         /// Constructor
@@ -124,7 +124,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <remarks></remarks>
         public int FindIndex(StringMutable key)
         {
-            var returnValue = Defaults.Integer;
+            var returnValue = -1;
             for (var Count = 0; Count < this.Count - 1; Count++)
             {
                 if (this[Count].Key == key)
@@ -158,7 +158,7 @@ namespace GoodToCode.Extensions.Configuration
         public void Add(StringMutable key, StringMutable value)
         {
             // Self-normalize based on AllowDuplicates and ThrowException
-            if (AllowDuplicates == false == false && this.GetValue(key) != Defaults.String)
+            if (AllowDuplicates == false == false && this.GetValue(key) != string.Empty)
             {
                 RemoveAt(FindIndex(key));
             }
@@ -172,7 +172,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <remarks></remarks>
         public void Remove(StringMutable key)
         {
-            if (this.GetValue(key).ToStringSafe() != Defaults.String)
+            if (this.GetValue(key).ToStringSafe() != string.Empty)
                 RemoveAt(FindIndex(key));
         }
     }

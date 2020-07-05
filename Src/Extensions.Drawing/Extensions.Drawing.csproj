@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Extensions.Net\Extensions.Net.csproj" />
+    <ProjectReference Include="..\Extensions.Serialization\Extensions.Serialization.csproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
   </ItemGroup>
 </Project>

@@ -38,7 +38,7 @@ namespace GoodToCode.Extensions
         public static string ToReadable(this double item, string replaceWith = "")
         {
             var returnValue = item.ToString();
-            returnValue = item == Defaults.Double ? replaceWith : returnValue;
+            returnValue = item == 0.0 ? replaceWith : returnValue;
             return returnValue;
         }
     }    

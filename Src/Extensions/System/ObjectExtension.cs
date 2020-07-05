@@ -173,7 +173,7 @@ namespace GoodToCode.Extensions
         /// <returns>Converted string, or ""</returns>
         public static string ToStringSafe(this object item)
         {
-            var returnValue = Defaults.String;
+            var returnValue = string.Empty;
 
             if (item == null == false)
             {

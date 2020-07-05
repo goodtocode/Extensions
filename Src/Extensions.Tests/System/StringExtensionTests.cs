@@ -10,35 +10,35 @@ namespace GoodToCode.Extensions.Test
         [TestMethod()]
         public void Core_String_SubstringRight()
         {
-            var TestItem = Defaults.Uri;
+            var TestItem = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
             Assert.IsTrue(TestItem.ToString().SubstringRight(1) == TestItem.ToString().Substring(TestItem.ToString().Length - 1, 1));
         }
 
         [TestMethod()]
         public void Core_String_SubstringLeft()
         {
-            var TestItem = Defaults.Uri;
+            var TestItem = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
             Assert.IsTrue(TestItem.ToString().SubstringLeft(1) == TestItem.ToString().Substring(0, 1));
         }
 
         [TestMethod()]
         public void Core_String_SubstringSafe()
         {
-            var TestItem = Defaults.Uri;
+            var TestItem = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
             Assert.IsTrue(TestItem.ToString().SubstringSafe(0, 1).Length == 1);
         }
 
         [TestMethod()]
         public void Core_String_RemoveFirst()
         {
-            var TestItem = Defaults.Uri;
+            var TestItem = new Uri("http://localhost:80", UriKind.RelativeOrAbsolute);
             Assert.IsTrue(TestItem.ToString().RemoveFirst("h").Length == TestItem.ToString().Length - 1);
         }
 
         [TestMethod()]
         public void Core_String_RemoveLast()
         {
-            var TestItem = String.Format("{0}/", Defaults.Uri);
+            var TestItem = String.Format("{0}/", new Uri("http://localhost:80", UriKind.RelativeOrAbsolute));
             Assert.IsTrue(TestItem.RemoveLast("/").Length == TestItem.Length - 1);
         }
 
@@ -125,7 +125,7 @@ namespace GoodToCode.Extensions.Test
             var testDataGood = "1234";
             var testDataBad = "OneTwo12";
             Assert.IsTrue(testDataGood.TryParseInt32() == 1234);
-            Assert.IsTrue(testDataBad.TryParseInt32() == Defaults.Integer);
+            Assert.IsTrue(testDataBad.TryParseInt32() == -1);
         }
 
         [TestMethod()]
@@ -134,7 +134,7 @@ namespace GoodToCode.Extensions.Test
             var testDataGood = "1234";
             var testDataBad = "OneTwo12";
             Assert.IsTrue(testDataGood.TryParseInt64() == 1234);
-            Assert.IsTrue(testDataBad.TryParseInt64() == Defaults.Integer);
+            Assert.IsTrue(testDataBad.TryParseInt64() == -1);
         }
 
         [TestMethod()]
@@ -142,8 +142,8 @@ namespace GoodToCode.Extensions.Test
         {
             var testDataGood = "A8CA69CE-F8C6-4FCC-9FED-6AF9F94879D9";
             var testDataBad = "A869CE-F8C6-4FCC-9FED-6AF994879D9";
-            Assert.IsTrue(testDataGood.TryParseGuid() != Defaults.Guid);
-            Assert.IsTrue(testDataBad.TryParseGuid() == Defaults.Guid);
+            Assert.IsTrue(testDataGood.TryParseGuid() != Guid.Empty);
+            Assert.IsTrue(testDataBad.TryParseGuid() == Guid.Empty);
         }
 
         [TestMethod()]
@@ -172,7 +172,7 @@ namespace GoodToCode.Extensions.Test
             var testDataGood = "12.00";
             var testDataBad = "OneTwo12";
             Assert.IsTrue(testDataGood.TryParseDecimal() == 12.00M);
-            Assert.IsTrue(testDataBad.TryParseDecimal() == Defaults.Decimal);
+            Assert.IsTrue(testDataBad.TryParseDecimal() == 0m);
         }
 
         [TestMethod()]
@@ -181,7 +181,7 @@ namespace GoodToCode.Extensions.Test
             var testDataGood = "12.00";
             var testDataBad = "OneTwo12";
             Assert.IsTrue(testDataGood.TryParseDouble() == 12.00);
-            Assert.IsTrue(testDataBad.TryParseDouble() == Defaults.Double);
+            Assert.IsTrue(testDataBad.TryParseDouble() == 0.0);
         }
 
         [TestMethod()]
@@ -190,7 +190,7 @@ namespace GoodToCode.Extensions.Test
             var testDataGood = "08/24/2011";
             var testDataBad = "badDate";
             Assert.IsTrue(testDataGood.TryParseDateTime().Month == 8);
-            Assert.IsTrue(testDataBad.TryParseDateTime() == Defaults.Date);
+            Assert.IsTrue(testDataBad.TryParseDateTime() == new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc));
         }
 
         [TestMethod()]
@@ -199,7 +199,7 @@ namespace GoodToCode.Extensions.Test
             var testDataGood = "10:45 PM";
             var testDataBad = "badTime";
             Assert.IsTrue(testDataGood.TryParseTime().Minute == 45);
-            Assert.IsTrue(testDataBad.TryParseTime().Minute == Defaults.Date.Minute );
+            Assert.IsTrue(testDataBad.TryParseTime().Minute == new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc).Minute );
         }
     }
 }

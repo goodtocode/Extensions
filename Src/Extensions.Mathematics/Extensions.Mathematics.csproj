@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyName>GoodToCode.Extensions.Mathematics</AssemblyName>
+    <RootNamespace>GoodToCode.Extensions.Mathematics</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Mathematics.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extensions\Extensions.csproj" />
+  </ItemGroup>
+
+</Project>

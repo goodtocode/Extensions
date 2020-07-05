@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyName>GoodToCode.Extensions.Serialization</AssemblyName>
+    <RootNamespace>GoodToCode.Extensions.Serialization</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\GoodToCode.Extensions.Serialization.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extensions.Text\Extensions.Text.csproj" />
+    <ProjectReference Include="..\Extensions\Extensions.csproj" />
+  </ItemGroup>
+
+</Project>

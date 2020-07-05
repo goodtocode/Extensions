@@ -14,7 +14,7 @@ namespace GoodToCode.Extensions.Test
         public async Task Core_Net_HttpRequestGetString_SendAsync()
         {
             var configuration = new ConfigurationManagerCore(ApplicationTypes.Native);
-            var dataOut = Defaults.String;
+            var dataOut = string.Empty;
             var request = new HttpRequestGetString(configuration.AppSettingValue("MyWebService") + "/HomeApi");
             try
             {

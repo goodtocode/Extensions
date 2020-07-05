@@ -14,49 +14,49 @@ namespace GoodToCode.Extensions.Test
         ///  Can set Id before saving, and will be preserved
         ///  only if using GoodToCode.Framework.Repository for CRUD
         /// </summary>
-        public virtual int Id { get; set; } = Defaults.Integer;
+        public virtual int Id { get; set; } = -1;
 
         /// <summary>
         /// Key of record
         ///  Can set Key before saving, and will be preserved
         ///  only if using GoodToCode.Framework.Repository for CRUD
         /// </summary>
-        public virtual Guid Key { get; set; } = Defaults.Guid;
+        public virtual Guid Key { get; set; } = Guid.Empty;
 
         /// <summary>
         /// Date record was created
         /// </summary>
-        public virtual DateTime CreatedDate { get; set; } = Defaults.Date;
+        public virtual DateTime CreatedDate { get; set; } = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
 
         /// <summary>
         /// Date record was modified
         /// </summary>
-        public virtual DateTime ModifiedDate { get; set; } = Defaults.Date;
+        public virtual DateTime ModifiedDate { get; set; } = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
 
         /// <summary>
         /// Status of this record
         /// </summary>
-        public virtual Guid State { get; set; } = Defaults.Guid;
+        public virtual Guid State { get; set; } = Guid.Empty;
 
         /// <summary>
         /// FirstName of customers
         /// </summary>
-        public string FirstName { get; set; } = Defaults.String;
+        public string FirstName { get; set; } = string.Empty;
 
         /// <summary>
         /// MiddleName of customer
         /// </summary>
-        public string MiddleName { get; set; } = Defaults.String;
+        public string MiddleName { get; set; } = string.Empty;
 
         /// <summary>
         /// LastName of customer
         /// </summary>
-        public string LastName { get; set; } = Defaults.String;
+        public string LastName { get; set; } = string.Empty;
 
         /// <summary>
         /// BirthDate of customer
         /// </summary>
-        public DateTime BirthDate { get; set; } = Defaults.Date;
+        public DateTime BirthDate { get; set; } = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
 
         /// <summary>
         /// BirthDate of customer
@@ -66,7 +66,7 @@ namespace GoodToCode.Extensions.Test
         /// <summary>
         /// Type of customer
         /// </summary>
-        public int CustomerTypeId { get; set; } = Defaults.Integer;
+        public int CustomerTypeId { get; set; } = -1;
        
         /// <summary>
         /// ISO 5218 Standard for Gender values

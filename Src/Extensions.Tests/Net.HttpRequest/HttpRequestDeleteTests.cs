@@ -13,7 +13,7 @@ namespace GoodToCode.Extensions.Test
         [TestMethod()]
         public async Task Core_Net_HttpRequestDelete_SendAsync()
         {
-            var dataOut = Defaults.String;
+            var dataOut = string.Empty;
             var configuration = new ConfigurationManagerCore(ApplicationTypes.Native);
             var request = new HttpRequestDelete(configuration.AppSettingValue(AppSettingList.MyWebServiceKeyName) + "/HomeApi");
             try

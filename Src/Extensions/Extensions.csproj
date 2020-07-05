@@ -10,7 +10,7 @@
     <RootNamespace>GoodToCode.Extensions</RootNamespace>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>GoodToCodeFramework.snk</AssemblyOriginatorKeyFile>
-    <Version>4.18.11</Version>
+    <Version>5.20.07</Version>
     <Authors>GoodToCode</Authors>
     <Company>GoodToCode</Company>
     <Product>GoodToCode .NET Extensions for .NET Standard, .NET Core, Universal (UWP), Xamarin Forms and Portable Class Libraries (PCL).</Product>
@@ -29,7 +29,13 @@
     <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="System\Defaults.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="GoodToCode.Extensions.Standard.csproj.vspscc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="System\Defaults.cs" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PostBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />

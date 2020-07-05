@@ -95,7 +95,7 @@ namespace GoodToCode.Extensions.Configuration
         /// <summary>
         /// EDMXFileName
         /// </summary>
-        public string EDMXFileName { get; set; } = Defaults.String;
+        public string EDMXFileName { get; set; } = string.Empty;
 
         /// <summary>
         /// Determines type of connection string: ADO or EF
@@ -161,7 +161,7 @@ namespace GoodToCode.Extensions.Configuration
         protected bool SetField<TField>(ref TField field, TField value,
         [CallerMemberName] string propertyName = null)
         {
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
             if (EqualityComparer<TField>.Default.Equals(field, value) == false)
             {
                 field = value;
@@ -262,7 +262,7 @@ namespace GoodToCode.Extensions.Configuration
 
             if (IsEF == false)
             {
-                EDMXFileName = dataAccessObject.GetTypeInfo().Namespace.Replace(".", Defaults.String);
+                EDMXFileName = dataAccessObject.GetTypeInfo().Namespace.Replace(".", string.Empty);
                 returnValue = this.ToString("EF");
             }
 

@@ -9,7 +9,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Double_ToDecimal()
         {
             double original = 10.00;
-            decimal castedValue = Defaults.Decimal;
+            decimal castedValue = 0m;
             castedValue = original.ToDecimal();
             Assert.IsTrue(castedValue == (decimal)original);
         }

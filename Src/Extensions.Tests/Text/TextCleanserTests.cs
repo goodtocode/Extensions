@@ -15,7 +15,7 @@ namespace GoodToCode.Extensions.Test
         [TestMethod()]
         public void Core_Text_Cleanser_HtmlUnsafe()
         {
-            var safeHtml = Defaults.String;
+            var safeHtml = string.Empty;
             var cleanser = new HtmlUnsafeCleanser(unsafeHtml);
             safeHtml = cleanser.Cleanse();
             Assert.IsTrue(safeHtml.Contains(unsafeTag1.SubstringLeft(6)) == false, "Did not work.");

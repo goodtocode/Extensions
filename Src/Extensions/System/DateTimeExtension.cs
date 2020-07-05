@@ -114,7 +114,7 @@ namespace GoodToCode.Extensions
             var sign = weekdays < 0 ? -1 : 1;
             var unsignedDays = Math.Abs(weekdays);
             var weekdaysAdded = 0;
-            var returnValue = Defaults.Date;
+            var returnValue = new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc);
 
             while (weekdaysAdded < unsignedDays)
             {
@@ -138,7 +138,7 @@ namespace GoodToCode.Extensions
         {
             var returnValue = 0;
 
-            if (item != Defaults.Date)
+            if (item != new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc))
             {
                 returnValue = DateTime.Today.Year - item.Year;
                 if (item.AddYears(returnValue) > DateTime.Today)
@@ -159,7 +159,7 @@ namespace GoodToCode.Extensions
         {
             var sqlMinimumDate = new DateTime(1753, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc); // Minimum Date SQL Accepts
             var sqlMaximumDate = new DateTime(9999, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc); // Maximum Date SQL Accepts
-            var returnValue = Defaults.Boolean;
+            var returnValue = false;
             var minResult = DateTime.Compare(item, sqlMinimumDate);
             var maxResult = DateTime.Compare(item, sqlMaximumDate);
 
@@ -182,7 +182,7 @@ namespace GoodToCode.Extensions
         public static string ToReadable(this DateTime item, string replaceWith = "")
         {
             var returnValue = item.ToString();
-            returnValue = item == Defaults.Date ? replaceWith : returnValue;
+            returnValue = item == new DateTime(1900, 01, 01, 00, 00, 00, 000, DateTimeKind.Utc) ? replaceWith : returnValue;
             return returnValue;
         }
     }

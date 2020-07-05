@@ -43,7 +43,7 @@ namespace GoodToCode.Extensions.Test
             var kvList = new KeyValueListString();
             kvList.Add("Key1", "Value1");
             kvList.Add("Key2", "Value2");
-            Assert.IsTrue(kvList.GetValue("Key1") != Defaults.String);
+            Assert.IsTrue(kvList.GetValue("Key1") != string.Empty);
         }
     }
 }   

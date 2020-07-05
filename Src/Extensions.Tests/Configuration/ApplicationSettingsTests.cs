@@ -22,7 +22,7 @@ namespace GoodToCode.Extensions.Test
             var configuration = new ConfigurationManagerCore(ApplicationTypes.Native);
 
             itemToTest = configuration.AppSetting("TestAppSetting");
-            Assert.IsTrue(itemToTest.Value != Defaults.String);
+            Assert.IsTrue(itemToTest.Value != string.Empty);
         }
     }
 }

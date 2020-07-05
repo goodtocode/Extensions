@@ -11,7 +11,7 @@ namespace GoodToCode.Extensions.Test
         public void Core_Text_Encoding_Base64Encoder()
         {
             var rawValue = "Raw data value";
-            var encodedValue = Defaults.String;
+            var encodedValue = string.Empty;
 
             var encoder = new Base64Encoder(rawValue);
             encodedValue = encoder.Encode();
