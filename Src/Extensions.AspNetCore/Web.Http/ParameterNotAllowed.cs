@@ -1,7 +1,4 @@
-﻿
-using System;
-using GoodToCode.Extensions;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
 namespace GoodToCode.Extensions.Web.Http

@@ -103,18 +103,7 @@ namespace GoodToCode.Extensions.Net
             : base(urlNoQuerystring.AddLast("/") + String.Join("|", parameters).Replace("||", "|%20|").Replace("|", "/"))
         {
         }
-
-        /// <summary>
-        /// Constructor that formats the entire URL, complete with PROTOCOL://SERVER_NAME:PORT/APPLICATION_PATH/Parameter1/Parameter2/.../ParameterN/
-        /// </summary>
-        /// <param name="urlNoQuerystring">Url with everything but parameters and punctuation</param>
-        /// <param name="parameters">Collection of parameters to add to Url</param>
-        /// <returns>Constructed url</returns>
-        public UrlBuilder(string urlNoQuerystring, KeyValueListString parameters) 
-            : base(urlNoQuerystring.AddLast("/") +parameters.ToString("QS"))
-        {
-        }
-        
+       
         /// <summary>
         /// Encodes to URL friendly
         /// </summary>

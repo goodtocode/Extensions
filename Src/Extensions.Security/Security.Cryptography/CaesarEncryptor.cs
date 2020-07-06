@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using GoodToCode.Extensions;
 using GoodToCode.Extensions.Mathematics;
-using GoodToCode.Extensions.Text.Encoding;
 
 namespace GoodToCode.Extensions.Security.Cryptography
 {
@@ -63,7 +62,7 @@ namespace GoodToCode.Extensions.Security.Cryptography
                 returnValue = Convert.ToBase64String(encryptedByte);
                 if (this.EncodeForURL)
                 {
-                    returnValue = UrlEncoder.Encode(returnValue);
+                    returnValue = Uri.EscapeDataString(returnValue).Replace("+", "%20");
                 }
             }
             catch (Exception ex)
@@ -86,7 +85,7 @@ namespace GoodToCode.Extensions.Security.Cryptography
             string returnValue;
             try
             {
-                originalString = this.EncodeForURL == true ? UrlEncoder.Decode(originalString) : originalString;
+                originalString = this.EncodeForURL == true ? Uri.UnescapeDataString(originalString).Replace("%20", "+") : originalString;
                 encryptedByte = Convert.FromBase64String(originalString);
                 originalString = Encoding.Unicode.GetString(encryptedByte, 0, encryptedByte.Length);
                 returnValue = this.ShiftString(originalString, Arithmetic.Multiply(this.Key.TryParseInt16(), -1).ToShort());

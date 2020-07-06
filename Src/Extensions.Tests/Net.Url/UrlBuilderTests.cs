@@ -32,27 +32,6 @@ namespace GoodToCode.Extensions.Test
         }
 
         [TestMethod()]
-        public void Core_Net_UrlBuilder_Querystring()
-        {
-            // Test manually building querystring uri
-            string manualQuerystring = "http://localhost:80";
-            manualQuerystring += String.Join("&", QuerystringList.ToString("QS"));
-            manualQuerystring = manualQuerystring.RemoveFirst("&");
-            manualQuerystring = manualQuerystring.AddFirst("?");
-            Assert.IsTrue(manualQuerystring.Contains(LocalhostWithPortAsString));
-            Assert.IsTrue(manualQuerystring.Contains("?key1=param1"));
-            Assert.IsTrue(manualQuerystring.Contains("&key2=param2"));
-            Assert.IsTrue(manualQuerystring.Contains("&key3=param3"));
-
-            // Now test UrlBuilder
-            var testItem = new UrlBuilder(LocalhostWithPortAsUri.ToString(), QuerystringList);
-            Assert.IsTrue(testItem.ToString().Contains(LocalhostWithPortAsString));
-            Assert.IsTrue(testItem.ToString().Contains("?key1=param1"));
-            Assert.IsTrue(testItem.ToString().Contains("&key2=param2"));
-            Assert.IsTrue(testItem.ToString().Contains("&key3=param3"));
-        }
-
-        [TestMethod()]
         public void Core_Net_UrlBuilder_ToString()
         {
             var testItem = new UrlBuilder(LocalhostWithPortAsUri.ToString());

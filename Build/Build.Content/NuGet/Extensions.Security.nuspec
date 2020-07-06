@@ -18,7 +18,6 @@
       <group>
         <dependency id="GoodToCode.Extensions" version="[4,6)" />
         <dependency id="GoodToCode.Extensions.Mathematics" version="[4,6)" />
-        <dependency id="GoodToCode.Extensions.Text" version="[4,6)" />
       </group>
     </dependencies>
   </metadata>

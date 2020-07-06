@@ -1,16 +1,14 @@
-﻿using System;
+﻿using GoodToCode.Extensions.Mathematics;
+using System;
 using System.Security.Cryptography;
 using System.Text;
-using GoodToCode.Extensions;
-using GoodToCode.Extensions.Mathematics;
-using GoodToCode.Extensions.Text.Encoding;
 
 namespace GoodToCode.Extensions.Security.Cryptography
 {
     /// <summary>
     /// Encrypts/Decrypts using 3 DES algorithms
     /// </summary>
-    
+
     public class DesEncryptor : IEncryptor
     {
         /// <summary>
@@ -63,7 +61,7 @@ namespace GoodToCode.Extensions.Security.Cryptography
                 returnValue = Convert.ToBase64String(encryptor.TransformFinalBlock(encryptedByte, 0, encryptedByte.Length));
                 if (this.EncodeForURL)
                 {
-                    returnValue = UrlEncoder.Encode(returnValue);
+                    returnValue = Uri.EscapeDataString(returnValue).Replace("+", "%20");
                 }
             }
             catch
@@ -86,7 +84,7 @@ namespace GoodToCode.Extensions.Security.Cryptography
                 string itemToDecrypt = encryptedString;
                 if (this.EncodeForURL)
                 {
-                    itemToDecrypt = UrlEncoder.Decode(encryptedString);
+                    itemToDecrypt = Uri.UnescapeDataString(encryptedString).Replace("%20", "+");
                 }
                 using (TripleDES des = CreateDes())
                 {

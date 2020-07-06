@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Net", "Extension
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Serialization", "Extensions.Serialization\Extensions.Serialization.csproj", "{F8EFEEF3-9C4F-4B85-B568-4561337FCFF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Text", "Extensions.Text\Extensions.Text.csproj", "{B377DBDA-C30E-4601-A23E-19C5ACC66240}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Mathematics", "Extensions.Mathematics\Extensions.Mathematics.csproj", "{7644AE2B-19D2-44C5-B253-8D4087E10BE5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Security", "Extensions.Security\Extensions.Security.csproj", "{3CBA117A-9A0F-4553-A524-E77C4494CBEB}"
@@ -57,10 +55,6 @@ Global
 		{F8EFEEF3-9C4F-4B85-B568-4561337FCFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8EFEEF3-9C4F-4B85-B568-4561337FCFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8EFEEF3-9C4F-4B85-B568-4561337FCFF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B377DBDA-C30E-4601-A23E-19C5ACC66240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B377DBDA-C30E-4601-A23E-19C5ACC66240}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B377DBDA-C30E-4601-A23E-19C5ACC66240}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B377DBDA-C30E-4601-A23E-19C5ACC66240}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7644AE2B-19D2-44C5-B253-8D4087E10BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7644AE2B-19D2-44C5-B253-8D4087E10BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7644AE2B-19D2-44C5-B253-8D4087E10BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
