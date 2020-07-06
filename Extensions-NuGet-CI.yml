@@ -113,13 +113,6 @@ steps:
     packagesToPack: Build/Build.Content/NuGet/Extensions.Serialization.nuspec
     versioningScheme: byBuildNumber
 
-- task: NuGetCommand@2
-  displayName: 'NuGet pack Extensions.Text.nuspec'
-  inputs:
-    command: pack
-    packagesToPack: Build/Build.Content/NuGet/Extensions.Text.nuspec
-    versioningScheme: byBuildNumber
-
 - task: CopyFiles@2
   displayName: 'Copy Files Set-PackageQuality.ps1'
   inputs:
